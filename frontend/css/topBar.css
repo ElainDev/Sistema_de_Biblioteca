@@ -1,0 +1,66 @@
+/* ============================= */
+/* TOPBAR */
+/* ============================= */
+
+.topBar {
+  width: 100%;
+  height: 8vh;
+  padding: 0.5rem var(--paddingGeral);
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.campoBusca {
+  position: relative;
+  width: 60%;
+}
+
+.campoBusca input {
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 2.5rem;
+  border-radius: 100px;
+  border: none;
+  outline: none;
+  background-color: rgba(116, 116, 128, 0.08);
+  font-size: 1rem;
+}
+
+.iconeBusca {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: #727272;
+  pointer-events: none;
+}
+
+.iconeBusca svg {
+  width: 100%;
+  height: 100%;
+  stroke: #727272;
+  fill: none;
+}
+
+.perfilTopBar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+  width: auto;
+  font-size: 0.9rem;
+  color: #333;
+  background-color: transparent;
+}
+.perfilTopBar a {
+  text-decoration: none;
+  color: inherit;
+}
+.perfilTopBar img {
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  object-fit: cover;
+}
