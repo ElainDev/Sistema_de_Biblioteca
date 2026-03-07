@@ -1,464 +1,448 @@
+.mainDiv {
+  background-color: #f1e4cc;
+}
 /* Container do título e botão */
 .sessaoLivro {
-    display: flex;
-    align-items: center;           /* alinha verticalmente o conteúdo */
-    justify-content: space-between; /* título e botão com espaço entre eles */
-    gap: 20px;                     /* espaço entre título e botão */
-    flex-wrap: wrap;               /* quebra para mobile */
-    margin: 1% 2%;                 /* reduz o espaçamento geral */
-    padding: 0.5rem 0;             /* ajuste o padding do container */
+  display: flex;
+  align-items: center; /* alinha verticalmente o conteúdo */
+  justify-content: space-between; /* título e botão com espaço entre eles */
+  gap: 20px; /* espaço entre título e botão */
+  flex-wrap: wrap; /* quebra para mobile */
+  margin: 1% 2%; /* reduz o espaçamento geral */
+  padding: 0.5rem 0; /* ajuste o padding do container */
 }
 
 /* Título */
 .sessaoLivro h1 {
-    color: #2C2725;
-    margin: 0;                     /* remove margin para controle melhor */
-    padding: 0;                    /* remove padding extra */
-    font-size: 2rem;               /* ajuste o tamanho do título conforme necessário */
+  color: #2c2725;
+  margin: 0; /* remove margin para controle melhor */
+  padding: 0; /* remove padding extra */
+  font-size: 2rem; /* ajuste o tamanho do título conforme necessário */
 }
 
 /* Botão */
 .sessaoLivro button {
-    background-color: #8C6046;
-    color: white;
-    display: block;
-    padding: 10px 20px;            /* padding maior horizontal */
-    border-radius: 35px;
-    width: auto;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.2rem;               /* ajuste o tamanho do título conforme necessário */
-    border-radius: 35px;
-    margin: 0; 
-    border: none; /* tira a sombra do botao*/
-   
-}
-   
-
-div.scrollingDiv
-{
-   overflow:auto;
+  background-color: #8c6046;
+  color: white;
+  display: block;
+  padding: 10px 20px; /* padding maior horizontal */
+  border-radius: 35px;
+  width: auto;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.2rem; /* ajuste o tamanho do título conforme necessário */
+  border-radius: 35px;
+  margin: 0;
+  border: none; /* tira a sombra do botao*/
 }
 
+div.scrollingDiv {
+  overflow: auto;
+}
 
 .container-cards {
-    display: flex;
-    flex-wrap: wrap;           
-    gap: 20px;                 
-    justify-content: space-between;    
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
 }
 
 /* Card individual */
 
 /* Card individual */
 .cardlivro {
-    display: flex;
-    flex-direction: row;        /* Organiza a imagem à esquerda e o texto à direita */
-    align-items: flex-start;    /* Alinha a imagem e o texto ao início */
-    width: calc(40% - 10px);     /* Dois cards por linha, ajustando o gap */
-    max-width: auto;            /* Largura máxima do card */
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombras nos cards */
-    overflow: hidden;
-    background: #fff;
-    gap: 10px;                   /* Espaço menor entre a imagem e o texto dentro do card */
-    margin: 25px;                /* Menor margem entre os cards */
-    padding: 15px;               /* Espaçamento interno do card */
+  display: flex;
+  flex-direction: row; /* Organiza a imagem à esquerda e o texto à direita */
+  align-items: flex-start; /* Alinha a imagem e o texto ao início */
+  width: calc(40% - 10px); /* Dois cards por linha, ajustando o gap */
+  max-width: auto; /* Largura máxima do card */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombras nos cards */
+  overflow: hidden;
+  background: #fff;
+  gap: 10px; /* Espaço menor entre a imagem e o texto dentro do card */
+  margin: 25px; /* Menor margem entre os cards */
+  padding: 15px; /* Espaçamento interno do card */
 }
 
 /* Media Query para telas menores (até 768px) */
 @media (max-width: 768px) {
-    .cardlivro {
-        width: calc(50% - 10px); /* 2 cards por linha em telas menores */
-    }
+  .cardlivro {
+    width: calc(50% - 10px); /* 2 cards por linha em telas menores */
+  }
 }
 
 /* Media Query para telas muito pequenas (até 480px) */
 @media (max-width: 480px) {
-    .cardlivro {
-        width: 100%;  /* 1 card por linha em telas pequenas */
-    }
+  .cardlivro {
+    width: 100%; /* 1 card por linha em telas pequenas */
+  }
 }
 
 .cardlivro button {
-    background-color: #8C6046;
-    color: white;
-    display: block;
-    padding: 5px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 10px;
-    width: 120px;
-    margin-top: 10%;
-    border: none;    /* tira a sombra do botao*/
-
-    
+  background-color: #8c6046;
+  color: white;
+  display: block;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 10px;
+  width: 120px;
+  margin-top: 10%;
+  border: none; /* tira a sombra do botao*/
 }
 
 /* Imagem */
 .cardlivro img {
-    width: 150px;              
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 /* Texto do card */
 .textotitulo {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;  
-    padding: 10px 0;
-    margin: 0;
-    flex: 1;                      
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px 0;
+  margin: 0;
+  flex: 1;
 }
 
 /* Título */
 .textotitulo h2 {
-    margin-bottom: 10px;
-    font-size: clamp(1rem, 2vw, 1.5rem);
+  margin-bottom: 10px;
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
-
 
 /* O card do botão de Registrar Livro*/
 dialog {
-    margin: auto;
-    padding: 30px;
-    border: none;
-    border-radius: 10px;
-    width: 400px;
-    text-align: left;
+  margin: auto;
+  padding: 30px;
+  border: none;
+  border-radius: 10px;
+  width: 400px;
+  text-align: left;
 }
 
-.modalLivro{
-    width: 900px;
-    border: none;
-    border-radius: 20px;
-    padding: 30px;
-    position: relative;
-    position: fixed;         /* pra deixar o card fixado ao abaixar o scroll*/
-
+.modalLivro {
+  width: 900px;
+  border: none;
+  border-radius: 20px;
+  padding: 30px;
+  position: relative;
+  position: fixed; /* pra deixar o card fixado ao abaixar o scroll*/
 }
 
-.modalLivro::backdrop{
-    background: rgba(0,0,0,0.4);
+.modalLivro::backdrop {
+  background: rgba(0, 0, 0, 0.4);
 }
 
-.modalContainer{
-    display: flex;
-    gap: 30px;
+.modalContainer {
+  display: flex;
+  gap: 30px;
 }
 
-.capaLivro{
-    width: 200px;
-    height: 310px;
-    background: #d9d9d9;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 40px;
+.capaLivro {
+  width: 200px;
+  height: 310px;
+  background: #d9d9d9;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
 }
 
-.formLivro{
-    flex:1;
-    grid-column: 2;
+.formLivro {
+  flex: 1;
+  grid-column: 2;
 }
 
-.linha{
-    display: flex;
-    gap: 15px;
-    margin-bottom: 15px;
+.linha {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
 }
 
-.campo{
-    display: flex;
-    flex-direction: column;
-    flex:1;
-    margin-bottom:10px;
-
+.campo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-bottom: 10px;
 }
 
-.campo label{
-    font-weight: 600;
-    margin-bottom:5px;
+.campo label {
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
 .campo input,
 .campo select,
-.campo textarea{
-    border:none;
-    background:#ececec;
-    padding:10px;
-    border-radius:20px;
+.campo textarea {
+  border: none;
+  background: #ececec;
+  padding: 10px;
+  border-radius: 20px;
 }
 
-.sinopse textarea{
-    height:80px;
-    resize:none;
-
+.sinopse textarea {
+  height: 80px;
+  resize: none;
 }
 
-.pequeno{
-    max-width:120px;
+.pequeno {
+  max-width: 120px;
 }
 
-.botoes{
-    display:flex;
-    justify-content:flex-end;
-    margin-top:10px;
-    color: #000;
+.botoes {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  color: #000;
 }
 
-.btnRegistrar{
-    border:none;
-    padding:10px 20px;
-    border-radius:20px;
-    color:white;
-    cursor:pointer;
+.btnRegistrar {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
 }
 
 .modalLivro .fecharModal {
-    position: absolute;
-    top: 5px;
-    right: 15px;
-    border: none;
-    background: none;
-    color: #000;
-    font-size: 18px;
-    cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  border: none;
+  background: none;
+  color: #000;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 /* card de registrar livros */
 /* Container dos cards */
-.cardsRegistro{
-    position: absolute;
-    inset: 0;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
+.cardsRegistro {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
 }
 
 /* Card base */
-.card{
-    background: #efefef;
-    width: 240px;
-    min-height: 150px; /* altura mínima igual para todos */
-    padding: 25px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-    display: none;
-    
+.card {
+  background: #efefef;
+  width: 240px;
+  min-height: 150px; /* altura mínima igual para todos */
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  display: none;
 }
 
 /* Texto */
-.card p{
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 20px;
+.card p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 /* Área dos botões */
-.acoes{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+.acoes {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 /* Botão SIM */
-#confirmarRegistro{
-    background: #8fd14f;
-    border: none;
-    padding: 6px 18px;
-    border-radius: 20px;
-    color: white;
-    cursor: pointer;
+#confirmarRegistro {
+  background: #8fd14f;
+  border: none;
+  padding: 6px 18px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
 }
 
 /* Botão NÃO */
-#cancelarRegistro{
-    background: #b84b42;
-    border: none;
-    padding: 6px 18px;
-    border-radius: 20px;
-    color: white;
-    cursor: pointer;
+#cancelarRegistro {
+  background: #b84b42;
+  border: none;
+  padding: 6px 18px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
 }
 
 /* Loader */
-.loader{
-    width: 30px;
-    height: 30px;
-    margin: 10px auto;
-    border: 4px solid #d8c5b8;
-    border-top: 4px solid #8C6046;
-    border-radius: 50%;
-    animation: girar 1s linear infinite;
+.loader {
+  width: 30px;
+  height: 30px;
+  margin: 10px auto;
+  border: 4px solid #d8c5b8;
+  border-top: 4px solid #8c6046;
+  border-radius: 50%;
+  animation: girar 1s linear infinite;
 }
 
-@keyframes girar{
-    100%{
-        transform: rotate(360deg);
-    }
+@keyframes girar {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.card.resultado{
-    position: relative;
-
+.card.resultado {
+  position: relative;
 }
 
 .resultado-texto {
-   text-align: center;   /* centraliza horizontalmente */
-    margin: 40px 0 0 0;  /* ajusta a distância do topo se quiser */
-    font-size: 16px;      /* ou o tamanho que quiser */
-    color: #000;
+  text-align: center; /* centraliza horizontalmente */
+  margin: 40px 0 0 0; /* ajusta a distância do topo se quiser */
+  font-size: 16px; /* ou o tamanho que quiser */
+  color: #000;
 }
-
-
 
 .modalLivro .fecharModal,
-#fecharResultado{
-    position: absolute;
-    top: 0%;
-    right: 0%;
-    border: none;
-    background: none;
-    color: #000;
-    font-size: 18px;
-    cursor: pointer;;
+#fecharResultado {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  border: none;
+  background: none;
+  color: #000;
+  font-size: 18px;
+  cursor: pointer;
 }
-
 
 /*Card do Ler mais...*/
 /* Modal “Ler mais” */
 #modalDetalhes {
-    width: 900px;                  /* largura principal do modal */
-    border: none;
-    border-radius: 20px;           /* cantos arredondados */
-    padding: 30px;
-    position: relative;
-    background: #fff;
-    text-align: left;
-        position: fixed;         /* muda de absolute para fixed */
-
-    
+  width: 900px; /* largura principal do modal */
+  border: none;
+  border-radius: 20px; /* cantos arredondados */
+  padding: 30px;
+  position: relative;
+  background: #fff;
+  text-align: left;
+  position: fixed; /* muda de absolute para fixed */
 }
 
 #modalDetalhes::backdrop {
-    background: rgba(0,0,0,0.4);   /* sombra de fundo */
+  background: rgba(0, 0, 0, 0.4); /* sombra de fundo */
 }
 
 /* Container interno: capa + informações */
 #modalDetalhes .modalContainer {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;               /* responsivo em telas menores */
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap; /* responsivo em telas menores */
 }
 
 /* Capa do livro */
 #modalDetalhes .capaLivro {
-    width: 200px;
-    height: 310px;
-    background: #d9d9d9;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+  width: 200px;
+  height: 310px;
+  background: #d9d9d9;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 #modalDetalhes .capaLivro img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
 /* Informações do livro */
 #modalDetalhes .infoLivro {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
 }
 
 /* Campos de informação */
 #modalDetalhes .infoLivro .campo {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #modalDetalhes .infoLivro .campo label {
-    font-weight: 600;
-    margin-bottom: 5px;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
-
 
 /* Campos pequenos (Nº de páginas, exemplares) */
 #modalDetalhes .infoLivro .pequeno p {
-    max-width: 120px;
+  max-width: 120px;
 }
 
 /* Sinopse */
 #modalDetalhes .infoLivro .sinopse p {
-    height: auto;
-    min-height: 80px;
+  height: auto;
+  min-height: 80px;
 }
 
 /* Botão fechar */
 #modalDetalhes .fecharModal {
-    position: absolute;
-    top: 5px;
-    right: 15px;
-    border: none;
-    background: none;
-    color: #000;
-    font-size: 18px;
-    cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  border: none;
+  background: none;
+  color: #000;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    #modalDetalhes {
-        width: 90%;                /* ocupa quase toda a tela */
-        padding: 20px;
-    }
+  #modalDetalhes {
+    width: 90%; /* ocupa quase toda a tela */
+    padding: 20px;
+  }
 
-    #modalDetalhes .modalContainer {
-        flex-direction: column;    /* imagem acima do texto em telas menores */
-        align-items: center;
-    }
+  #modalDetalhes .modalContainer {
+    flex-direction: column; /* imagem acima do texto em telas menores */
+    align-items: center;
+  }
 
-    #modalDetalhes .capaLivro {
-        width: 60%;
-        height: auto;
-    }
+  #modalDetalhes .capaLivro {
+    width: 60%;
+    height: auto;
+  }
 
-    #modalDetalhes .infoLivro {
-        width: 100%;
-    }
+  #modalDetalhes .infoLivro {
+    width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
-    #modalDetalhes {
-        width: 95%;
-        padding: 15px;
-    }
+  #modalDetalhes {
+    width: 95%;
+    padding: 15px;
+  }
 
-    #modalDetalhes .capaLivro {
-        width: 100%;
-        height: 250px;
-    }
+  #modalDetalhes .capaLivro {
+    width: 100%;
+    height: 250px;
+  }
 }
 
 #modalDetalhes .infoLivro .campo p {
-    margin: 0;
-    padding: 12px 6px;   /* aumenta o espaço interno */
-    font-size: 0.7rem;      /* tamanho do texto */
-    min-height: 40px;     /* altura mínima da caixa */
-    border-radius: 20px;
+  margin: 0;
+  padding: 12px 6px; /* aumenta o espaço interno */
+  font-size: 0.7rem; /* tamanho do texto */
+  min-height: 40px; /* altura mínima da caixa */
+  border-radius: 20px;
 }
-

@@ -6,7 +6,17 @@
 
 :root {
   --paddingGeral: 1.5rem;
-  --corGeralRoxoEscuro: #8a38f5;
+
+  /*Paleta de cores*/
+  --corMarrom: #8c6046;
+  --corBege: #f1e4cc;
+  --corPreto: #2c2725;
+  -corverde: #9fca32;
+  --corVermelho: #ae4e3f;
+  --corBranco: #fff;
+  --corCinzaClaro: rgba(116, 116, 128, 0.08);
+  --corCinzaEscuro: #727272;
+  --corSombra: rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -28,7 +38,6 @@
 }
 
 /*main*/
-.mainLivros {
+.mainDiv {
   flex: 5.5;
-  background-color: #F1E4CC;
 }

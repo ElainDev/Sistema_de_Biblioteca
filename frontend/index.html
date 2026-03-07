@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class=" container">
+    <div class="container">
         <!-- Aqui fica a sideBar -->
         <section class="sideBar">
             <header>
@@ -21,7 +21,7 @@
                 <h2 class="tituloSidebar">Menu</h2>
             </header>
             <nav>
-                <a href="#" class="sideBarBotao">
+                <a href="index.html" class="sideBarBotao">
                     <span class="iconeBotaoSideBar">
                         <svg viewBox="0 0 24 24">
                             <path fill="currentColor"
@@ -82,9 +82,9 @@
             </div>
         </section>
 
-        
+
         <!-- Aqui ficam os itens da direita -->
-        <section class="mainLivros">
+        <section class="mainDiv">
             <nav class="topBar">
                 <div class="campoBusca">
                     <span class="iconeBusca">
@@ -98,446 +98,402 @@
                 </div>
                 <div class="perfilTopBar">
                     <a href="pageProfile.html">Camilla Coelho</a>
-                    <a href="pageProfile.html"><img src="assets/img/pexels-shvetsa-5325840.jpg" alt="icone" ></a>
-                </div>      
-
-            </nav>     
+                    <a href="pageProfile.html"><img src="assets/img/defaultProfile.png" alt="icone"
+                            class="img-perfil"></a>
+                </div>
+            </nav>
 
             <div class="scrollingDiv">
-    <div class="sessaoLivro">
-        <h1>Todos os Livros</h1>
-        <button id="botaoregistrarlivro">Registrar livro</button>
+                <div class="sessaoLivro">
+                    <h1>Todos os Livros</h1>
+                    <button id="botaoregistrarlivro">Registrar livro</button>
 
-                <dialog class="modalLivro">
+                    <dialog class="modalLivro">
 
-            <button class="fecharModal">✕</button>
+                        <button class="fecharModal">✕</button>
 
-            <div class="modalContainer">
+                        <div class="modalContainer">
 
-                <!-- Área da capa -->
-                <div class="capaLivro">
-            <!-- Input escondido -->
-            <input type="file" id="uploadCapa" accept="image/*" style="display: none;" />
+                            <!-- Área da capa -->
+                            <div class="capaLivro">
+                                <!-- Input escondido -->
+                                <input type="file" id="uploadCapa" accept="image/*" style="display: none;" />
 
-            <!-- SVG clicável -->
-            <span id="clicarCapa">
-                <svg width="38" height="42" viewBox="0 0 38 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 34L16 24L19.76 27.76C18.66 29.58 18 31.72 18 34H6ZM12 17C12 15.34 10.66 14 9 14C7.34 14 6 15.34 6 17C6 18.66 7.34 20 9 20C10.66 20 12 18.66 12 17ZM18.18 36H4V4H18V14H28V22.18C28.66 22.08 29.32 22 30 22C30.68 22 31.34 22.08 32 22.18V12L20 0H4C2.93913 0 1.92172 0.421427 1.17157 1.17157C0.421427 1.92172 0 2.93913 0 4V36C0 38.22 1.78 40 4 40H19.62C18.92 38.78 18.42 37.44 18.18 36ZM28 26V32H22V36H28V42H32V36H38V32H32V26H28Z" fill="black"/>
-                </svg>
-            </span>
-        </div>
+                                <!-- SVG clicável -->
+                                <span id="clicarCapa">
+                                    <svg width="38" height="42" viewBox="0 0 38 42" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6 34L16 24L19.76 27.76C18.66 29.58 18 31.72 18 34H6ZM12 17C12 15.34 10.66 14 9 14C7.34 14 6 15.34 6 17C6 18.66 7.34 20 9 20C10.66 20 12 18.66 12 17ZM18.18 36H4V4H18V14H28V22.18C28.66 22.08 29.32 22 30 22C30.68 22 31.34 22.08 32 22.18V12L20 0H4C2.93913 0 1.92172 0.421427 1.17157 1.17157C0.421427 1.92172 0 2.93913 0 4V36C0 38.22 1.78 40 4 40H19.62C18.92 38.78 18.42 37.44 18.18 36ZM28 26V32H22V36H28V42H32V36H38V32H32V26H28Z"
+                                            fill="black" />
+                                    </svg>
+                                </span>
+                            </div>
 
-                <!-- Formulário -->
-                <form class="formLivro">
+                            <!-- Formulário -->
+                            <form class="formLivro">
 
-                    <div class="linha">
-                        <div class="campo">
-                            <label>ISBN</label>
-                            <input type="text" placeholder="Digite o ISBN do livro...">
+                                <div class="linha">
+                                    <div class="campo">
+                                        <label>ISBN</label>
+                                        <input type="text" placeholder="Digite o ISBN do livro...">
+                                    </div>
+
+                                    <div class="campo">
+                                        <label>Ano de publicação</label>
+                                        <input type="date" placeholder="Digite o ano de publicação...">
+                                    </div>
+                                </div>
+
+                                <div class="campo">
+                                    <label>Título</label>
+                                    <input type="text" placeholder="Digite o título do livro...">
+                                </div>
+
+                                <div class="linha">
+                                    <div class="campo">
+                                        <label>Editora</label>
+                                        <select>
+                                            <option>Editora...</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="campo">
+                                        <label>Categoria</label>
+                                        <select>
+                                            <option>Categoria...</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="campo pequeno">
+                                        <label>Nº Páginas</label>
+                                        <input type="number" placeholder="...">
+                                    </div>
+                                </div>
+
+                                <div class="linha">
+                                    <div class="campo">
+                                        <label>Autor</label>
+                                        <input type="text" placeholder="Digite o nome do autor...">
+                                    </div>
+
+                                    <div class="campo pequeno">
+                                        <label>Nº Exemplares</label>
+                                        <input type="number" placeholder="...">
+                                    </div>
+                                </div>
+
+                                <div class="campo sinopse">
+                                    <label>Sinopse</label>
+                                    <textarea placeholder="Digite a sinopse do livro..."></textarea>
+                                </div>
+
+                                <div class="botoes">
+                                    <button type="submit" class="btnRegistrar">Registrar livro</button>
+
+                                </div>
+
+                            </form>
+
                         </div>
 
-                        <div class="campo">
-                            <label >Ano de publicação</label>
-                            <input type="date" placeholder="Digite o ano de publicação...">
+                        <div class="cardsRegistro">
+
+                            <!-- Card pergunta -->
+                            <div class="card pergunta" id="cardPergunta">
+                                <p>Tem certeza que quer registrar esse livro?</p>
+
+                                <div class="acoes">
+                                    <button id="confirmarRegistro">Sim</button>
+                                    <button id="cancelarRegistro">Não</button>
+                                </div>
+                            </div>
+
+
+                            <!-- Card carregando -->
+                            <div class="card carregando" id="cardCarregando">
+                                <p>Seu livro está sendo registrado...</p>
+                                <div class="loader"></div>
+                            </div>
+
+
+                            <!-- Card resultado -->
+                            <div class="card resultado" id="cardResultado">
+                                <button id="fecharResultado">✕</button>
+                                <p class="resultado-texto">Seu livro foi registrado!</p>
+                            </div>
+
                         </div>
-                    </div>
+                    </dialog>
 
-                    <div class="campo">
-                        <label>Título</label>
-                        <input type="text" placeholder="Digite o título do livro...">
-                    </div>
-
-                    <div class="linha">
-                        <div class="campo">
-                            <label>Editora</label>
-                            <select>
-                                <option>Editora...</option>
-                            </select>
-                        </div>
-
-                        <div class="campo">
-                            <label>Categoria</label>
-                            <select>
-                                <option>Categoria...</option>
-                            </select>
-                        </div>
-
-                        <div class="campo pequeno">
-                            <label>Nº Páginas</label>
-                            <input type="number" placeholder="...">
-                        </div>
-                    </div>
-
-                    <div class="linha">
-                        <div class="campo">
-                            <label>Autor</label>
-                            <input type="text" placeholder="Digite o nome do autor...">
-                        </div>
-
-                        <div class="campo pequeno">
-                            <label>Nº Exemplares</label>
-                            <input type="number" placeholder="...">
-                        </div>
-                    </div>
-
-                    <div class="campo sinopse">
-                        <label>Sinopse</label>
-                        <textarea placeholder="Digite a sinopse do livro..."></textarea>
-                    </div>
-
-                    <div class="botoes">
-                        <button type="submit" class="btnRegistrar">Registrar livro</button>
-
-                    </div>
-
-                </form>
-
-            </div>
-
-            <div class="cardsRegistro">
-
-                <!-- Card pergunta -->
-                <div class="card pergunta" id="cardPergunta">
-                    <p>Tem certeza que quer registrar esse livro?</p>
-
-                    <div class="acoes">
-                        <button id="confirmarRegistro">Sim</button>
-                        <button id="cancelarRegistro">Não</button>
-                    </div>
                 </div>
 
+                <!-- Modal único para todos os cards -->
+                <dialog class="modalLivro" id="modalDetalhes">
+                    <button class="fecharModal">✕</button>
 
-                <!-- Card carregando -->
-                <div class="card carregando" id="cardCarregando">
-                    <p>Seu livro está sendo registrado...</p>
-                    <div class="loader"></div>
+                    <div class="modalContainer">
+                        <!-- Área da capa -->
+                        <div class="capaLivro" id="modalCapa">
+                            <img src="" alt="Capa do livro">
+                        </div>
+
+                        <!-- Informações do livro -->
+                        <div class="infoLivro">
+                            <!-- Título -->
+                            <div class="campo">
+                                <label>Título:</label>
+                                <p id="modalTitulo"></p>
+                            </div>
+
+                            <!-- Linha Autor | Editora | Ano -->
+                            <div class="linha">
+                                <div class="campo pequeno">
+                                    <label>Autor:</label>
+                                    <p id="modalAutor"></p>
+                                </div>
+                                <div class="campo pequeno">
+                                    <label>Editora:</label>
+                                    <p id="modalEditora"></p>
+                                </div>
+                                <div class="campo pequeno">
+                                    <label>Ano:</label>
+                                    <p id="modalAno"></p>
+                                </div>
+                            </div>
+
+                            <!-- Linha Categoria | Nº Páginas -->
+                            <div class="linha">
+                                <div class="campo pequeno">
+                                    <label>Categoria:</label>
+                                    <p id="modalCategoria"></p>
+                                </div>
+                                <div class="campo pequeno">
+                                    <label>Nº Páginas:</label>
+                                    <p id="modalPaginas"></p>
+                                </div>
+                            </div>
+
+                            <!-- Nº de Exemplares -->
+                            <div class="linha">
+                                <div class="campo pequeno">
+                                    <label>Nº de Exemplares:</label>
+                                    <p id="modalExemplares"></p>
+                                </div>
+                                <div class="campo pequeno">
+                                    <label>Disponível</label>
+                                    <p id="modalDisponivel">
+                                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="16" cy="16" r="16" fill="#9FCA32" />
+                                            <path
+                                                d="M13 24.42L6.79004 18.21L9.62004 15.38L13 18.77L22.88 8.88L25.71 11.71L13 24.42Z"
+                                                fill="white" />
+                                        </svg>
+                                    </p>
+                                </div>
+                            </div>
+
+
+
+                            <!-- Sinopse -->
+                            <div class="campo sinopse">
+                                <label>Sinopse:</label>
+                                <p id="modalSinopse"></p>
+                            </div>
+                        </div>
+                    </div>
+                </dialog>
+
+                <div class="container-cards">
+                    <!-- Card 1 -->
+                    <div class="cardlivro" data-titulo="Ciências Exatas e da Terra" data-autor="Autor 1"
+                        data-editora="Editora A" data-ano="2026" data-categoria="Ciências Exatas" data-paginas="350"
+                        data-exemplares="5" data-sinopse="Breve sinopse do livro..."
+                        data-capa="assets/img/CienciasExatas.jpg">
+                        <img src="assets/img/CienciasExatas.jpg" alt="Ciências Exatas">
+                        <div class="textotitulo">
+                            <h2>Ciências exatas e da Terra</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias,
+                                expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia,
+                                est culpa voluptates similique quis nemo ab cumque?</p>
+                            <button class="btnLerMais">Ler mais...</button>
+                        </div>
+                    </div>
+
+
+                    <!-- Card 2 -->
+                    <div class="cardlivro" data-titulo="Engenharia do Futuro" data-autor="Autor 2"
+                        data-editora="Editora B" data-ano="2025" data-categoria="Engenharia" data-paginas="420"
+                        data-exemplares="0" data-sinopse="Livro sobre as tendências futuras da engenharia."
+                        data-capa="assets/img/EngenhariaDoFuturo.jpg">
+                        <img src="assets/img/EngenhariaDoFuturo.jpg" alt="Ciências Exatas">
+                        <div class="textotitulo">
+                            <h2>Engenharia do Futuro</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias,
+                                expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia,
+                                est culpa voluptates similique quis nemo ab cumque?</p>
+                            <button class="btnLerMais">Ler mais...</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="cardlivro" data-titulo="Introdução às Ciências Sociais" data-autor="Autor 3"
+                        data-editora="Editora C" data-ano="2024" data-categoria="Ciências Sociais" data-paginas="300"
+                        data-exemplares="3" data-sinopse="Livro introdutório sobre Ciências Sociais."
+                        data-capa="assets/img/IntroducaoCienciasSociais.jpg">
+                        <img src="assets/img/IntroducaoCienciasSociais.jpg" alt="Ciências Exatas">
+                        <div class="textotitulo">
+                            <h2>Introdução às Ciências Sociais</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias,
+                                expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia,
+                                est culpa voluptates similique quis nemo ab cumque?</p>
+                            <button class="btnLerMais">Ler mais...</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="cardlivro" data-titulo="Engenharia Web" data-autor="Autor 4" data-editora="Editora D"
+                        data-ano="2023" data-categoria="Engenharia" data-paginas="250" data-exemplares="2"
+                        data-sinopse="Fundamentos de engenharia web." data-capa="assets/img/EngenhariaWeb.jpg">
+                        <img src="assets/img/EngenhariaWeb.jpg" alt="Ciências Exatas">
+                        <div class="textotitulo">
+                            <h2>Engenharia Web</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias,
+                                expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia,
+                                est culpa voluptates similique quis nemo ab cumque?</p>
+                            <button class="btnLerMais">Ler mais...</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="cardlivro" data-titulo="Fundamentos Ciências Humanas" data-autor="Autor 5"
+                        data-editora="Editora E" data-ano="2022" data-categoria="Ciências Humanas" data-paginas="200"
+                        data-exemplares="0" data-sinopse="Introdução às Ciências Humanas."
+                        data-capa="assets/img/FundamentosCienciasHumanas.jpg">
+                        <img src="assets/img/FundamentosCienciasHumanas.jpg" alt="Ciências Exatas">
+                        <div class="textotitulo">
+                            <h2>Fundamentos Ciências Humanas</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias,
+                                expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia,
+                                est culpa voluptates similique quis nemo ab cumque?</p>
+                            <button class="btnLerMais">Ler mais...</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="cardlivro" data-titulo="Fundamentos Enfermagem" data-autor="Autor 6"
+                        data-editora="Editora F" data-ano="2021" data-categoria="Ciências da Saúde" data-paginas="180"
+                        data-exemplares="7" data-sinopse="Livro básico de enfermagem."
+                        data-capa="assets/img/FundamentosEnfermagem.jpg">
+                        <img src="assets/img/FundamentosEnfermagem.jpg" alt="Ciências Exatas">
+                        <div class="textotitulo">
+                            <h2>Fundamentos Enfermagem</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias,
+                                expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia,
+                                est culpa voluptates similique quis nemo ab cumque?</p>
+                            <button class="btnLerMais">Ler mais...</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 7 -->
+                    <div class="cardlivro" data-titulo="Introdução Linguística" data-autor="Autor 7"
+                        data-editora="Editora G" data-ano="2020" data-categoria="Linguística" data-paginas="220"
+                        data-exemplares="4" data-sinopse="Livro introdutório de linguística."
+                        data-capa="assets/img/IntroducaoLinguistica.jpg">
+                        <img src="assets/img/IntroducaoLinguistica.jpg" alt="Ciências Exatas">
+                        <div class="textotitulo">
+                            <h2>Introdução Linguística</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias,
+                                expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia,
+                                est culpa voluptates similique quis nemo ab cumque?</p>
+                            <button class="btnLerMais">Ler mais...</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 8 -->
+                    <div class="cardlivro" data-titulo="Política Social" data-autor="Autor 8" data-editora="Editora H"
+                        data-ano="2020" data-categoria="Ciências Sociais" data-paginas="200" data-exemplares="0"
+                        data-sinopse="Livro sobre política social." data-capa="assets/img/PoliticaSocial.jpg">
+                        <img src="assets/img/PoliticaSocial.jpg" alt="Ciências Exatas">
+                        <div class="textotitulo">
+                            <h2>Política Social</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias,
+                                expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia,
+                                est culpa voluptates similique quis nemo ab cumque?</p>
+                            <button class="btnLerMais">Ler mais...</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 9 -->
+                    <div class="cardlivro" data-titulo="Biologia" data-autor="Autor 9" data-editora="Editora I"
+                        data-ano="2019" data-categoria="Ciências Biológicas" data-paginas="300" data-exemplares="3"
+                        data-sinopse="Livro sobre biologia." data-capa="assets/img/Biologia.jpg">
+                        <img src="assets/img/Biologia.jpg" alt="Ciências Exatas">
+                        <div class="textotitulo">
+                            <h2>Biologia</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias,
+                                expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia,
+                                est culpa voluptates similique quis nemo ab cumque?</p>
+                            <button class="btnLerMais">Ler mais...</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 10 -->
+                    <div class="cardlivro" data-titulo="Entendendo Algoritmos" data-autor="Autor 10"
+                        data-editora="Editora J" data-ano="2018" data-categoria="Ciência da Computação"
+                        data-paginas="250" data-exemplares="1" data-sinopse="Livro de algoritmos."
+                        data-capa="assets/img/EntendendoAlgoritmos.jpg">
+                        <img src="assets/img/EntendendoAlgoritmos.jpg" alt="Ciências Exatas">
+                        <div class="textotitulo">
+                            <h2>Entendendo Algoritmos</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias,
+                                expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia,
+                                est culpa voluptates similique quis nemo ab cumque?</p>
+                            <button class="btnLerMais">Ler mais...</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 11 -->
+                    <div class="cardlivro" data-titulo="SQL Guia Prático" data-autor="Autor 11" data-editora="Editora K"
+                        data-ano="2017" data-categoria="Banco de Dados" data-paginas="230" data-exemplares="0"
+                        data-sinopse="Guia prático de SQL." data-capa="assets/img/SqlGuiaPratico.jpg">
+                        <img src="assets/img/SqlGuiaPratico.jpg" alt="Ciências Exatas">
+                        <div class="textotitulo">
+                            <h2>SQL Guia Prático</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias,
+                                expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia,
+                                est culpa voluptates similique quis nemo ab cumque?</p>
+                            <button class="btnLerMais">Ler mais...</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 12 -->
+                    <div class="cardlivro" data-titulo="Escrita Acadêmica" data-autor="Autor 12"
+                        data-editora="Editora L" data-ano="2016" data-categoria="Educação" data-paginas="210"
+                        data-exemplares="5" data-sinopse="Livro sobre escrita acadêmica."
+                        data-capa="assets/img/EscritaAcademica.webp">
+                        <img src="assets/img/EscritaAcademica.webp" alt="Ciências Exatas">
+                        <div class="textotitulo">
+                            <h2>Escrita Acadêmica</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias,
+                                expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia,
+                                est culpa voluptates similique quis nemo ab cumque?</p>
+                            <button class="btnLerMais">Ler mais...</button>
+                        </div>
+                    </div>
+
+
                 </div>
-
-
-                <!-- Card resultado -->
-                <div class="card resultado" id="cardResultado">
-                    <button id="fecharResultado">✕</button>
-                    <p class="resultado-texto">Seu livro foi registrado!</p>
-                </div>
-
             </div>
-        </dialog>
-        
-    </div>
-
-<!-- Modal único para todos os cards -->
-            <dialog class="modalLivro" id="modalDetalhes">
-            <button class="fecharModal">✕</button>
-
-            <div class="modalContainer">
-                <!-- Área da capa -->
-                <div class="capaLivro" id="modalCapa">
-                    <img src="" alt="Capa do livro">
-                </div>
-
-                <!-- Informações do livro -->
-                <div class="infoLivro">
-                    <!-- Título -->
-                    <div class="campo">
-                        <label>Título:</label>
-                        <p id="modalTitulo"></p>
-                    </div>
-
-                    <!-- Linha Autor | Editora | Ano -->
-                    <div class="linha">
-                        <div class="campo pequeno">
-                            <label>Autor:</label>
-                            <p id="modalAutor"></p>
-                        </div>
-                        <div class="campo pequeno">
-                            <label>Editora:</label>
-                            <p id="modalEditora"></p>
-                        </div>
-                        <div class="campo pequeno">
-                            <label>Ano:</label>
-                            <p id="modalAno"></p>
-                        </div>
-                    </div>
-
-                    <!-- Linha Categoria | Nº Páginas -->
-                    <div class="linha">
-                        <div class="campo pequeno">
-                            <label>Categoria:</label>
-                            <p id="modalCategoria"></p>
-                        </div>
-                        <div class="campo pequeno">
-                            <label>Nº Páginas:</label>
-                            <p id="modalPaginas"></p>
-                        </div>
-                    </div>
-
-                    <!-- Nº de Exemplares -->
-                <div class="linha">
-                        <div class="campo pequeno">
-                            <label>Nº de Exemplares:</label>
-                            <p id="modalExemplares"></p>
-                        </div>
-                        <div class="campo pequeno">
-                            <label>Disponível</label>
-                            <p id="modalDisponivel">
-                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="16" cy="16" r="16" fill="#9FCA32"/>
-                                    <path d="M13 24.42L6.79004 18.21L9.62004 15.38L13 18.77L22.88 8.88L25.71 11.71L13 24.42Z" fill="white"/>
-                                </svg>
-                            </p>
-                        </div>
-                    </div>
-
-                    
-
-                    <!-- Sinopse -->
-                    <div class="campo sinopse">
-                        <label>Sinopse:</label>
-                        <p id="modalSinopse"></p>
-                    </div>
-                </div>
-            </div>
-        </dialog>
-
-            <div class="container-cards">
-                <!-- Card 1 -->
-               <div class="cardlivro"
-               data-titulo="Ciências Exatas e da Terra"
-               data-autor="Autor 1"
-               data-editora="Editora A"
-               data-ano="2026"
-               data-categoria="Ciências Exatas"
-               data-paginas="350"
-               data-exemplares="5"
-               data-sinopse="Breve sinopse do livro..."
-               data-capa="assets/img/CienciasExatas.jpg">
-            <img src="assets/img/CienciasExatas.jpg" alt="Ciências Exatas">
-            <div class="textotitulo">
-              <h2>Ciências exatas e da Terra</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias, expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia, est culpa voluptates similique quis nemo ab cumque?</p>
-              <button class="btnLerMais">Ler mais...</button>
-            </div>
-          </div>
-
-
-                <!-- Card 2 -->
-                <div class="cardlivro"
-               data-titulo="Engenharia do Futuro"
-               data-autor="Autor 2"
-               data-editora="Editora B"
-               data-ano="2025"
-               data-categoria="Engenharia"
-               data-paginas="420"
-               data-exemplares="0"
-               data-sinopse="Livro sobre as tendências futuras da engenharia."
-               data-capa="assets/img/EngenhariaDoFuturo.jpg">
-            <img src="assets/img/EngenhariaDoFuturo.jpg" alt="Ciências Exatas">
-            <div class="textotitulo">
-              <h2>Engenharia do Futuro</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias, expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia, est culpa voluptates similique quis nemo ab cumque?</p>
-              <button class="btnLerMais">Ler mais...</button>
-            </div>
-          </div>
-
-                <!-- Card 3 -->
-                <div class="cardlivro"
-               data-titulo="Introdução às Ciências Sociais"
-               data-autor="Autor 3"
-               data-editora="Editora C"
-               data-ano="2024"
-               data-categoria="Ciências Sociais"
-               data-paginas="300"
-               data-exemplares="3"
-               data-sinopse="Livro introdutório sobre Ciências Sociais."
-               data-capa="assets/img/IntroducaoCienciasSociais.jpg">
-            <img src="assets/img/IntroducaoCienciasSociais.jpg" alt="Ciências Exatas">
-            <div class="textotitulo">
-              <h2>Introdução às Ciências Sociais</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias, expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia, est culpa voluptates similique quis nemo ab cumque?</p>
-              <button class="btnLerMais">Ler mais...</button>
-            </div>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="cardlivro"
-               data-titulo="Engenharia Web"
-               data-autor="Autor 4"
-               data-editora="Editora D"
-               data-ano="2023"
-               data-categoria="Engenharia"
-               data-paginas="250"
-               data-exemplares="2"
-               data-sinopse="Fundamentos de engenharia web."
-               data-capa="assets/img/EngenhariaWeb.jpg">
-            <img src="assets/img/EngenhariaWeb.jpg" alt="Ciências Exatas">
-            <div class="textotitulo">
-              <h2>Engenharia Web</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias, expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia, est culpa voluptates similique quis nemo ab cumque?</p>
-              <button class="btnLerMais">Ler mais...</button>
-            </div>
-          </div>
-
-          <!-- Card 5 -->
-          <div class="cardlivro"
-               data-titulo="Fundamentos Ciências Humanas"
-               data-autor="Autor 5"
-               data-editora="Editora E"
-               data-ano="2022"
-               data-categoria="Ciências Humanas"
-               data-paginas="200"
-               data-exemplares="0"
-               data-sinopse="Introdução às Ciências Humanas."
-               data-capa="assets/img/FundamentosCienciasHumanas.jpg">
-            <img src="assets/img/FundamentosCienciasHumanas.jpg" alt="Ciências Exatas">
-            <div class="textotitulo">
-              <h2>Fundamentos Ciências Humanas</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias, expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia, est culpa voluptates similique quis nemo ab cumque?</p>
-              <button class="btnLerMais">Ler mais...</button>
-            </div>
-          </div>
-
-          <!-- Card 6 -->
-          <div class="cardlivro"
-               data-titulo="Fundamentos Enfermagem"
-               data-autor="Autor 6"
-               data-editora="Editora F"
-               data-ano="2021"
-               data-categoria="Ciências da Saúde"
-               data-paginas="180"
-               data-exemplares="7"
-               data-sinopse="Livro básico de enfermagem."
-               data-capa="assets/img/FundamentosEnfermagem.jpg">
-            <img src="assets/img/FundamentosEnfermagem.jpg" alt="Ciências Exatas">
-            <div class="textotitulo">
-              <h2>Fundamentos Enfermagem</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias, expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia, est culpa voluptates similique quis nemo ab cumque?</p>
-              <button class="btnLerMais">Ler mais...</button>
-            </div>
-          </div>
-
-          <!-- Card 7 -->
-          <div class="cardlivro"
-               data-titulo="Introdução Linguística"
-               data-autor="Autor 7"
-               data-editora="Editora G"
-               data-ano="2020"
-               data-categoria="Linguística"
-               data-paginas="220"
-               data-exemplares="4"
-               data-sinopse="Livro introdutório de linguística."
-               data-capa="assets/img/IntroducaoLinguistica.jpg">
-            <img src="assets/img/IntroducaoLinguistica.jpg" alt="Ciências Exatas">
-            <div class="textotitulo">
-              <h2>Introdução Linguística</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias, expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia, est culpa voluptates similique quis nemo ab cumque?</p>
-              <button class="btnLerMais">Ler mais...</button>
-            </div>
-          </div>
-
-          <!-- Card 8 -->
-          <div class="cardlivro"
-               data-titulo="Política Social"
-               data-autor="Autor 8"
-               data-editora="Editora H"
-               data-ano="2020"
-               data-categoria="Ciências Sociais"
-               data-paginas="200"
-               data-exemplares="0"
-               data-sinopse="Livro sobre política social."
-               data-capa="assets/img/PoliticaSocial.jpg">
-            <img src="assets/img/PoliticaSocial.jpg" alt="Ciências Exatas">
-            <div class="textotitulo">
-              <h2>Política Social</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias, expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia, est culpa voluptates similique quis nemo ab cumque?</p>
-              <button class="btnLerMais">Ler mais...</button>
-            </div>
-          </div>
-
-          <!-- Card 9 -->
-          <div class="cardlivro"
-               data-titulo="Biologia"
-               data-autor="Autor 9"
-               data-editora="Editora I"
-               data-ano="2019"
-               data-categoria="Ciências Biológicas"
-               data-paginas="300"
-               data-exemplares="3"
-               data-sinopse="Livro sobre biologia."
-               data-capa="assets/img/Biologia.jpg">
-            <img src="assets/img/Biologia.jpg" alt="Ciências Exatas">
-            <div class="textotitulo">
-              <h2>Biologia</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias, expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia, est culpa voluptates similique quis nemo ab cumque?</p>
-              <button class="btnLerMais">Ler mais...</button>
-            </div>
-          </div>
-
-          <!-- Card 10 -->
-          <div class="cardlivro"
-               data-titulo="Entendendo Algoritmos"
-               data-autor="Autor 10"
-               data-editora="Editora J"
-               data-ano="2018"
-               data-categoria="Ciência da Computação"
-               data-paginas="250"
-               data-exemplares="1"
-               data-sinopse="Livro de algoritmos."
-               data-capa="assets/img/EntendendoAlgoritmos.jpg">
-            <img src="assets/img/EntendendoAlgoritmos.jpg" alt="Ciências Exatas">
-            <div class="textotitulo">
-              <h2>Entendendo Algoritmos</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias, expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia, est culpa voluptates similique quis nemo ab cumque?</p>
-              <button class="btnLerMais">Ler mais...</button>
-            </div>
-          </div>
-
-          <!-- Card 11 -->
-          <div class="cardlivro"
-               data-titulo="SQL Guia Prático"
-               data-autor="Autor 11"
-               data-editora="Editora K"
-               data-ano="2017"
-               data-categoria="Banco de Dados"
-               data-paginas="230"
-               data-exemplares="0"
-               data-sinopse="Guia prático de SQL."
-               data-capa="assets/img/SqlGuiaPratico.jpg">
-            <img src="assets/img/SqlGuiaPratico.jpg" alt="Ciências Exatas">
-            <div class="textotitulo">
-              <h2>SQL Guia Prático</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias, expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia, est culpa voluptates similique quis nemo ab cumque?</p>
-              <button class="btnLerMais">Ler mais...</button>
-            </div>
-          </div>
-
-          <!-- Card 12 -->
-          <div class="cardlivro"
-               data-titulo="Escrita Acadêmica"
-               data-autor="Autor 12"
-               data-editora="Editora L"
-               data-ano="2016"
-               data-categoria="Educação"
-               data-paginas="210"
-               data-exemplares="5"
-               data-sinopse="Livro sobre escrita acadêmica."
-               data-capa="assets/img/EscritaAcademica.webp">
-            <img src="assets/img/EscritaAcademica.webp" alt="Ciências Exatas">
-            <div class="textotitulo">
-              <h2>Escrita Acadêmica</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odit alias, expedita numquam labore repudiandae explicabo temporibus ut hic, in quisquam mollitia, est culpa voluptates similique quis nemo ab cumque?</p>
-              <button class="btnLerMais">Ler mais...</button>
-            </div>
-          </div>
-
-                
-            </div>
-        </div>
         </section>
     </div>
-        <!-- pra funcionar a abertura do card -->
-        <script src="funcaobotaolivro.js"></script> 
-        <!-- Link para o script separado -->
-        <script src="uploadCapa.js"></script>
+    <!-- script para mudar a foto de perfil do user -->
+    <script src="js/uploadPerfil.js"></script>
+    <!-- pra funcionar a abertura do card -->
+    <script src="js/funcaobotaolivro.js"></script>
+    <!-- Link para o script separado -->
+    <script src="js/uploadcapa.js"></script>
 </body>
 
 </html>

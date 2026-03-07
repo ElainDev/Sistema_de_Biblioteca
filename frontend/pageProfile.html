@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,9 @@
     <link rel="stylesheet" href="css/topBarProfile.css">
     <link rel="stylesheet" href="css/centerProfile.css">
 </head>
+
 <body>
-    <div class=" container">
+    <div class="container">
         <!-- Aqui fica a sideBar -->
         <section class="sideBar">
             <header>
@@ -18,14 +20,14 @@
                 <h2 class="tituloSidebar">Menu</h2>
             </header>
             <nav>
-                <a href="#" class="sideBarBotao">
+                <a href="index.html" class="sideBarBotao">
                     <span class="iconeBotaoSideBar">
                         <svg viewBox="0 0 24 24">
                             <path fill="currentColor"
                                 d="M6.5 16q1.175 0 2.288.263T11 17.05V7.2q-1.025-.6-2.175-.9T6.5 6q-.9 0-1.788.175T3 6.7v9.9q.875-.3 1.738-.45T6.5 16m6.5 1.05q1.1-.525 2.213-.787T17.5 16q.9 0 1.763.15T21 16.6V6.7q-.825-.35-1.713-.525T17.5 6q-1.175 0-2.325.3T13 7.2zm-1.662 2.338q-.313-.088-.588-.238q-.975-.575-2.05-.862T6.5 18q-1.05 0-2.062.275T2.5 19.05q-.525.275-1.012-.025T1 18.15V6.1q0-.275.138-.525T1.55 5.2q1.15-.6 2.4-.9T6.5 4q1.45 0 2.838.375T12 5.5q1.275-.75 2.663-1.125T17.5 4q1.3 0 2.55.3t2.4.9q.275.125.413.375T23 6.1v12.05q0 .575-.487.875t-1.013.025q-.925-.5-1.937-.775T17.5 18q-1.125 0-2.2.288t-2.05.862q-.275.15-.587.238t-.663.087t-.663-.088M14 8.776q0-.225.163-.462T14.525 8q.725-.25 1.45-.375T17.5 7.5q.5 0 .988.063t.962.162q.225.05.388.25t.162.45q0 .425-.275.625t-.7.1q-.35-.075-.737-.112T17.5 9q-.65 0-1.275.125t-1.2.325q-.45.175-.737-.025T14 8.775m0 5.5q0-.225.163-.462t.362-.313q.725-.25 1.45-.375T17.5 13q.5 0 .988.063t.962.162q.225.05.388.25t.162.45q0 .425-.275.625t-.7.1q-.35-.075-.737-.112T17.5 14.5q-.65 0-1.275.113t-1.2.312q-.45.175-.737-.012T14 14.275m0-2.75q0-.225.163-.462t.362-.313q.725-.25 1.45-.375t1.525-.125q.5 0 .988.063t.962.162q.225.05.388.25t.162.45q0 .425-.275.625t-.7.1q-.35-.075-.737-.112t-.788-.038q-.65 0-1.275.125t-1.2.325q-.45.175-.737-.025t-.288-.65" />
                         </svg>
-                    </span> 
-                    
+                    </span>
+
                     <span> Todos os livros </span>
                 </a>
 
@@ -82,19 +84,37 @@
         </section>
 
         <!-- Aqui ficam os itens da direita -->
-        <section class="mainPerfil">
-        <!-- Aqui fica a foto do perfil e informações-->
+        <section class="mainDiv">
+            <!-- Aqui fica a foto do perfil e informações-->
             <main>
-                <img src="assets/img/pexels-shvetsa-5325840.jpg" alt="icone" class="img-perfil">
-                <div id="circle"><img src="assets/img/Vector.png" alt="icone" class="vector-document"></div>
-                <h2 class="nameUser">Camilla Coelho</h2>
-                <p class="cargoUser">Cargo: Bibliotecária</p>
-                <p class="emailUser">Email: camilla.coelho@biblioteca.com</p>
-                <p class="IdUser">ID: 001</p>
+                <div class="topBarProfile">
+                    <div class="perfilHeader">
+                        <img src="assets/img/defaultProfile.png" alt="icone" class="img-perfil">
+                        <label for="uploadFoto" class="circleEditar">
+
+                            <svg class="iconeUpload" viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="m7 19l5-5l1.88 1.88c-.55.91-.88 1.98-.88 3.12zm3-8.5C10 9.67 9.33 9 8.5 9S7 9.67 7 10.5S7.67 12 8.5 12s1.5-.67 1.5-1.5m3.09 9.5H6V4h7v5h5v4.09c.33-.05.66-.09 1-.09s.67.04 1 .09V8l-6-6H6a2 2 0 0 0-2 2v16c0 1.11.89 2 2 2h7.81c-.35-.61-.6-1.28-.72-2M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z" />
+                            </svg>
+
+                        </label>
+
+                        <input type="file" id="uploadFoto" accept="image/*" hidden>
+                    </div>
+                </div>
+                <div class="conteudoProfile">
+                    <h2 class="nameUser">Camilla Coelho</h2>
+                    <p class="cargoUser">Cargo: Bibliotecária</p>
+                    <p class="emailUser">Email: camilla.coelho@biblioteca.com</p>
+                    <p class="IdUser">ID: 001</p>
                     <input type="button" value="Alterar senha" id="botaoAlterarSenha">
+                </div>
             </main>
         </section>
     </div>
-    
+
+    <!-- script para mudar a foto de perfil do user -->
+    <script src="js/uploadPerfil.js"></script>
 </body>
+
 </html>

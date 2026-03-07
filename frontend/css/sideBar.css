@@ -9,20 +9,21 @@
 .sideBar {
   flex: 1;
   padding: 2rem 0;
-  
 }
 
 .tituloPaginas {
   font-weight: 600;
   font-size: 2.5rem;
   padding: 1rem var(--paddingGeral);
+  color: var(--corPreto);
 }
 
 .tituloSidebar {
   font-weight: 600;
   font-size: 1.25rem;
+  color: var(--corPreto);
   padding: 1rem var(--paddingGeral);
-  background-color: white;
+  background-color: var(--corBranco);
 }
 
 .sideBarBotao {
@@ -34,13 +35,13 @@
   font-weight: 500;
   font-size: 1rem;
   text-decoration: none;
-  color: black;
+  color: var(--corPreto);
 
   transition: all 0.3s ease;
 }
 
 .sideBarBotao:hover {
-  color: var(--corGeralRoxoEscuro);
+  color: var(--corMarrom);
 }
 
 .iconeBotaoSideBar svg {
@@ -59,11 +60,12 @@
   padding: 1rem var(--paddingGeral);
   cursor: pointer;
   font-weight: 500;
+  color: var(--corPreto);
 
   transition: all 0.3s ease;
 }
 .botaoSideBar:hover {
-  color: var(--corGeralRoxoEscuro);
+  color: var(--corMarrom);
 }
 
 /* Faz a seta ir pra direita */
@@ -85,11 +87,11 @@
 }
 .itensEscondidos li a {
   text-decoration: none;
-  color: black;
+  color: var(--corPreto);
   transition: all 0.3s ease;
 }
 .itensEscondidos li a:hover {
-  color: var(--corGeralRoxoEscuro);
+  color: var(--corMarrom);
 }
 
 .dropCheck:checked ~ .itensEscondidos {
@@ -113,12 +115,12 @@
   padding: 0 1.5rem;
 }
 .itensDoFiltro a {
-  color: black;
+  color: var(--corPreto);
   font-size: 1rem;
   text-decoration: none;
 
   transition: all 0.3s ease;
 }
 .itensDoFiltro a:hover {
-  color: var(--corGeralRoxoEscuro);
+  color: var(--corMarrom);
 }

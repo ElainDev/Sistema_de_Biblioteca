@@ -1,81 +1,104 @@
+.mainDiv {
+  background-color: var(--corBranco);
+  display: flex;
+  justify-content: center;
+}
+.mainDiv main {
+  width: 100%;
+}
+
+.conteudoProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 7.5rem;
+}
+.perfilHeader {
+  position: absolute;
+  left: 50%;
+  bottom: -6.25rem;
+  transform: translateX(-50%);
+  display: inline-block;
+}
+
 .img-perfil {
-    position: absolute;
-    left: 780px;
-    top: 272px;
-    width: 200px;
-    height: 200px;
-    border: 5px solid #8C6046;
-    border-radius: 50%;
-    z-index: 99; 
+  width: 200px;
+  height: 200px;
+  border: 5px solid var(--corMarrom);
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
 }
 
-#circle {
-    position: absolute;
-    left: 805.5px;
-    top: 320px;
-    width: 56px;
-    height: 56px;
-    background-color: #F1E4CC;
-    margin: 100px;
-    border-radius: 100px;
-    z-index: 99;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+.circleEditar {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  width: 48px;
+  height: 48px;
+
+  background-color: var(--corBege);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  box-shadow: 0px 4px 10px var(--corSombra);
+  color: var(--corMarrom);
 }
 
-.vector-document{ 
-    position: absolute;
-    left: 15px;
-    top: 11px;
-    width: 32px;
-    height: 32px;
-    z-index: 100;
+.iconeUpload {
+  width: 24px;
+  height: 24px;
 }
 
-.nameUser{
-    font-size: 48px;
-    position: absolute;
-    left: 700px;
-    top: 500px;
-    margin: 0;
+.nameUser {
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--corPreto);
+  margin: 0;
 }
 
-.cargoUser{
-    font-size: 24px;
-    position: absolute; 
-    left: 765px;        
-    top: 560px;         
-    color: #6C6C6C;
-    margin: 0;
+.cargoUser {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--corCinzaEscuro);
+  margin: 0;
 }
 
-.emailUser{
-    font-size: 24px;
-    position: absolute; 
-    left: 675px;        
-    top: 600px;         
-    color: #6C6C6C;
-    margin: 0;
+.emailUser {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--corCinzaEscuro);
+  margin: 0;
 }
 
-.IdUser{
-    font-size: 24px;
-    position: absolute; 
-    left: 835px;       
-    top: 630px;         
-    color: #6C6C6C;
-    margin: 0;
+.IdUser {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--corCinzaEscuro);
+  margin: 0;
 }
 
 #botaoAlterarSenha {
-    position: absolute;
-    left: 585px;
-    top: 575px;
-    width: 391px;
-    height: 60px;
-    background-color: #8C6046;
-    margin: 100px;
-    border-radius: 100px;
-    z-index: 99;
-    border: none;
-    font-size: 24px;
+  width: 24.4rem;
+  height: 60px;
+  background-color: var(--corMarrom);
+  margin: 6.25rem;
+  border-radius: 6.25rem;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--corBranco);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#botaoAlterarSenha:hover {
+  background-color: var(--corPreto);
 }

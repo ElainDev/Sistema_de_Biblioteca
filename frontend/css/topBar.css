@@ -4,43 +4,44 @@
 
 .topBar {
   width: 100%;
-  height: 8vh;
+  height: 4rem;
   padding: 0.5rem var(--paddingGeral);
-  background-color: white;
+  background-color: var(--corBranco);
   display: flex;
   flex-direction: row;
 }
 
 .campoBusca {
-  position: relative;
+  display: flex;
+  align-items: center;
   width: 60%;
+  background-color: var(--corCinzaClaro);
+  border-radius: 100px;
+  padding: 0 0.75rem;
 }
 
 .campoBusca input {
-  width: 100%;
-  padding: 0.5rem 1rem 0.5rem 2.5rem;
-  border-radius: 100px;
+  flex: 1;
   border: none;
   outline: none;
-  background-color: rgba(116, 116, 128, 0.08);
+  background: transparent;
+  padding: 0.5rem 0;
   font-size: 1rem;
 }
 
 .iconeBusca {
-  position: absolute;
-  left: 0.75rem;
-  top: 50%;
-  transform: translateY(-100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 20px;
   height: 20px;
-  color: #727272;
-  pointer-events: none;
+  margin-right: 0.5rem;
 }
 
 .iconeBusca svg {
   width: 100%;
   height: 100%;
-  stroke: #727272;
+  stroke: var(--corCinzaEscuro);
   fill: none;
 }
 
@@ -51,7 +52,7 @@
   margin-left: auto;
   width: auto;
   font-size: 0.9rem;
-  color: #333;
+  color: var(--corPreto);
   background-color: transparent;
 }
 .perfilTopBar a {
