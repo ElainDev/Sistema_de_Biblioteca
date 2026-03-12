@@ -31,7 +31,6 @@ cardsRegistro.style.display = "none";
 ===================================== */
 document.addEventListener("DOMContentLoaded", () => {
     const selectEditora = document.getElementById("editoraLivro");
-    const selectCategoria = document.getElementById("categoriaLivro");
 
     if (selectEditora.options.length === 1) {
         const editoras = ["Companhia das Letras", "Rocco", "Penguin", "HarperCollins", "Objetiva", "Outra"];
@@ -43,16 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    if (selectCategoria.options.length === 1) {
-        const categorias = ["Ficção", "Não-Ficção", "Terror", "Romance", "Tecnologia", "História"];
-        categorias.forEach(cat => {
-            const option = document.createElement("option");
-            option.value = cat;
-            option.textContent = cat;
-            selectCategoria.appendChild(option);
-        });
-    }
-});
+    });
 
 /* =====================================
    ABRIR MODAL DE CADASTRO
