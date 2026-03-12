@@ -446,3 +446,62 @@ dialog {
   min-height: 40px; /* altura mínima da caixa */
   border-radius: 20px;
 }
+
+.capaLivro{
+    display: flex;
+    flex-direction: column; /* coloca os elementos um embaixo do outro */
+    align-items: center;    /* centraliza horizontalmente */
+    gap: 10px;              /* espaço entre o card e o botão */
+}
+
+#clicarCapa{
+    width: 180px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#botaoSelecionarCapa{
+    margin-top: 8px;
+}
+
+/* =====================================
+   BOTÕES DE AÇÃO NO MODAL DE DETALHES (CANTO INFERIOR ESQUERDO)
+===================================== */
+#modalDetalhes .infoLivro {
+  position: relative;
+}
+
+#modalDetalhes .acoesModal {
+  position: absolute;
+  bottom: auto;
+  left: 60%;
+  display: flex;
+  gap: 10px;
+}
+
+#modalDetalhes .btnEditarModal,
+#modalDetalhes .btnExcluirModal {
+  background-color: #8c6046;
+  color: white;
+  display: block;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 35px;
+  width: auto;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#modalDetalhes .btnExcluirModal {
+  background-color: #b84b42;
+}
+
+#modalDetalhes .btnEditarModal:hover,
+#modalDetalhes .btnExcluirModal:hover {
+  opacity: 0.8;
+}
