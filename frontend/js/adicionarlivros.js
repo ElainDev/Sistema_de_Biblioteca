@@ -21,6 +21,7 @@ const clicarCapa = document.getElementById("clicarCapa");
    VARIÁVEIS
 ===================================== */
 let livros = JSON.parse(localStorage.getItem("livros")) || [];
+let editoras = JSON.parse(localStorage.getItem("editoras")) || [];
 let livroEditando = null;
 let imagemSelecionada = null;
 
@@ -29,20 +30,48 @@ cardsRegistro.style.display = "none";
 /* =====================================
    POPULAR LISTAS (SELEC) - FEITO NO JS
 ===================================== */
-document.addEventListener("DOMContentLoaded", () => {
+function popularSelectEditora() {
     const selectEditora = document.getElementById("editoraLivro");
-
-    if (selectEditora.options.length === 1) {
-        const editoras = ["Companhia das Letras", "Rocco", "Penguin", "HarperCollins", "Objetiva", "Outra"];
-        editoras.forEach(ed => {
+    
+    if (!selectEditora) {
+        console.error("❌ Erro: Elemento 'editoraLivro' não encontrado no HTML!");
+        return;
+    }
+    
+    selectEditora.innerHTML = "";
+    
+    const optionPadrao = document.createElement("option");
+    optionPadrao.value = "";
+    optionPadrao.textContent = "Selecione a editora...";
+    selectEditora.appendChild(optionPadrao);
+    
+    const editorasDoStorage = JSON.parse(localStorage.getItem("editoras")) || [];
+    
+    if (editorasDoStorage.length > 0) {
+        editorasDoStorage.forEach(ed => {
+            const option = document.createElement("option");
+            option.value = ed.nome;
+            option.textContent = ed.nome;
+            selectEditora.appendChild(option);
+        });
+    } else {
+        const editorasPadrao = ["Companhia das Letras", "Rocco", "Penguin", "HarperCollins", "Objetiva", "Outra"];
+        editorasPadrao.forEach(ed => {
             const option = document.createElement("option");
             option.value = ed;
             option.textContent = ed;
             selectEditora.appendChild(option);
         });
     }
+}
 
-    });
+/* =====================================
+   INICIALIZAÇÃO
+===================================== */
+document.addEventListener("DOMContentLoaded", () => {
+    popularSelectEditora();
+    renderLivros();
+});
 
 /* =====================================
    ABRIR MODAL DE CADASTRO
@@ -52,7 +81,8 @@ botaoRegistrar.addEventListener("click", () => {
     livroEditando = null;
     form.reset();
     imagemSelecionada = null;
-    inputCapa.value = ""; //  RESETA O INPUT DE ARQUIVO
+    inputCapa.value = "";
+    popularSelectEditora();
 });
 
 /* =====================================
@@ -70,7 +100,6 @@ function renderLivros(lista = livros) {
         card.dataset.autor = livro.autor;
         card.dataset.editora = livro.editora;
         card.dataset.ano = livro.ano;
-        card.dataset.categoria = livro.categoria;
         card.dataset.paginas = livro.paginas;
         card.dataset.exemplares = livro.exemplares;
         card.dataset.sinopse = livro.sinopse;
@@ -101,18 +130,15 @@ function ativarLerMais() {
             const index = parseInt(card.dataset.index);
             const livro = livros[index];
 
-            // Preencher modal de detalhes
             modalDetalhes.querySelector("#modalTitulo").innerText = livro.titulo;
             modalDetalhes.querySelector("#modalAutor").innerText = livro.autor;
             modalDetalhes.querySelector("#modalEditora").innerText = livro.editora;
             modalDetalhes.querySelector("#modalAno").innerText = livro.ano;
-            modalDetalhes.querySelector("#modalCategoria").innerText = livro.categoria;
             modalDetalhes.querySelector("#modalPaginas").innerText = livro.paginas;
             modalDetalhes.querySelector("#modalExemplares").innerText = livro.exemplares;
             modalDetalhes.querySelector("#modalSinopse").innerText = livro.sinopse;
             modalDetalhes.querySelector("#modalCapa img").src = livro.capa;
 
-            //  LÓGICA DE DISPONIBILIDADE (ÍCONES)
             const disponivelBox = modalDetalhes.querySelector("#modalDisponivel");
             const quantidade = parseInt(livro.exemplares) || 0;
             
@@ -130,20 +156,19 @@ function ativarLerMais() {
                     </svg>`;
             }
 
-            // SALVAR O ÍNDICE NO MODAL PARA OS BOTÕES USAREM
             modalDetalhes.dataset.index = index;
-
-            // Mostrar o modal de detalhes
             modalDetalhes.showModal();
         });
     });
 }
 
 /* =====================================
-   BOTÕES DE AÇÃO NO MODAL DE DETALHES (CANTO INFERIOR ESQUERDO)
+   BOTÕES DE AÇÃO NO MODAL DE DETALHES
+===================================== */
+/* =====================================
+   BOTÕES DE AÇÃO NO MODAL DE DETALHES
 ===================================== */
 document.addEventListener("click", (e) => {
-    // Botão Editar no Modal de Detalhes
     if (e.target.classList.contains("btnEditarModal")) {
         const index = parseInt(modalDetalhes.dataset.index);
         const livro = livros[index];
@@ -152,28 +177,20 @@ document.addEventListener("click", (e) => {
         document.getElementById("autorLivro").value = livro.autor;
         document.getElementById("editoraLivro").value = livro.editora;
         document.getElementById("anoLivro").value = livro.ano;
-        document.getElementById("categoriaLivro").value = livro.categoria;
         document.getElementById("paginasLivro").value = livro.paginas;
         document.getElementById("exemplaresLivro").value = livro.exemplares;
         document.getElementById("sinopseLivro").value = livro.sinopse;
         
-        //  CORREÇÃO: Definir imagemSelecionada como a capa do livro
         imagemSelecionada = livro.capa;
-        
-        //  IMPORTANTE: Definir o índice para edição
         livroEditando = index;
-        
-        //  RESETAR O INPUT DE ARQUIVO
         inputCapa.value = "";
         
-        console.log("📝 Editando livro no índice:", index);
-        console.log("📝 Imagem selecionada:", imagemSelecionada);
+        popularSelectEditora();
         
         modalCadastro.showModal();
         modalDetalhes.close();
     }
     
-    // Botão Excluir no Modal de Detalhes
     if (e.target.classList.contains("btnExcluirModal")) {
         const index = parseInt(modalDetalhes.dataset.index);
         const confirmar = confirm("Tem certeza que deseja apagar este livro?");
@@ -197,7 +214,6 @@ form.addEventListener("submit", (e) => {
         { id: "autorLivro", nome: "Autor" },
         { id: "editoraLivro", nome: "Editora" },
         { id: "anoLivro", nome: "Ano de publicação" },
-        { id: "categoriaLivro", nome: "Categoria" },
         { id: "paginasLivro", nome: "Nº Páginas" },
         { id: "exemplaresLivro", nome: "Nº Exemplares" },
         { id: "sinopseLivro", nome: "Sinopse" },
@@ -211,7 +227,15 @@ form.addEventListener("submit", (e) => {
     });
 
     campos.forEach((c) => {
-        const valor = document.getElementById(c.id).value.trim();
+        const elemento = document.getElementById(c.id);
+        
+        if (!elemento) {
+            console.error(`❌ Campo ${c.id} não encontrado!`);
+            return;
+        }
+
+        const valor = elemento.value.trim();
+        
         if (!valor) {
             const erroSpan = document.querySelector(`#${c.id} + .erro`);
             if (erroSpan) erroSpan.innerText = `Preencha o campo ${c.nome}`;
@@ -220,7 +244,7 @@ form.addEventListener("submit", (e) => {
     });
 
     if (!todosPreenchidos) {
-        console.log(" Formulário incompleto");
+        console.log("❌ Formulário incompleto");
         return;
     }
 
@@ -229,58 +253,32 @@ form.addEventListener("submit", (e) => {
         autor: document.getElementById("autorLivro").value.trim(),
         editora: document.getElementById("editoraLivro").value.trim(),
         ano: document.getElementById("anoLivro").value.trim(),
-        categoria: document.getElementById("categoriaLivro").value.trim(),
         paginas: document.getElementById("paginasLivro").value.trim(),
         exemplares: document.getElementById("exemplaresLivro").value.trim(),
         sinopse: document.getElementById("sinopseLivro").value.trim(),
         capa: imagemSelecionada || "assets/img/defaultBook.png",
     };
 
-    //  CORREÇÃO: Verificar se é edição ou novo livro
     if (livroEditando !== null) {
-        console.log(" EDITANDO livro no índice:", livroEditando);
-        console.log(" Dados do livro:", livroAtual);
-        
-        try {
-            // Atualiza o livro no índice correto
-            livros[livroEditando] = livroAtual;
-            
-            // Salva no localStorage
-            localStorage.setItem("livros", JSON.stringify(livros));
-            
-            // Atualiza a lista de cards
-            renderLivros();
-            
-            // Limpa a variável de edição
-            livroEditando = null;
-            imagemSelecionada = null;
-            
-            console.log(" Livro editado com sucesso!");
-        } catch (error) {
-            console.error(" Erro ao salvar:", error);
-            alert("Erro ao salvar! O armazenamento está cheio. Exclua alguns livros ou limpe o cache.");
-        }
+        livros[livroEditando] = livroAtual;
+        localStorage.setItem("livros", JSON.stringify(livros));
+        renderLivros();
+        livroEditando = null;
+        imagemSelecionada = null;
     } else {
-        console.log(" ADICIONANDO novo livro");
-        try {
-            livros.push(livroAtual);
-            localStorage.setItem("livros", JSON.stringify(livros));
-            renderLivros();
-            imagemSelecionada = null;
-            console.log(" Livro adicionado com sucesso!");
-        } catch (error) {
-            console.error(" Erro ao salvar:", error);
-            alert("Erro ao salvar! O armazenamento está cheio. Exclua alguns livros ou limpe o cache.");
-        }
+        livros.push(livroAtual);
+        localStorage.setItem("livros", JSON.stringify(livros));
+        renderLivros();
+        imagemSelecionada = null;
     }
 
     form.reset();
-    inputCapa.value = ""; // RESETAR O INPUT DE ARQUIVO
+    inputCapa.value = "";
     modalCadastro.close();
 });
 
 /* =====================================
-   FECHAR MODAIS (CORRIGIDO)
+   FECHAR MODAIS
 ===================================== */
 document.querySelectorAll(".fecharModal").forEach((botao) => {
     botao.addEventListener("click", () => {
@@ -292,7 +290,6 @@ document.querySelectorAll(".fecharModal").forEach((botao) => {
                 modalDetalhes.querySelector("#modalAutor").innerText = "";
                 modalDetalhes.querySelector("#modalEditora").innerText = "";
                 modalDetalhes.querySelector("#modalAno").innerText = "";
-                modalDetalhes.querySelector("#modalCategoria").innerText = "";
                 modalDetalhes.querySelector("#modalPaginas").innerText = "";
                 modalDetalhes.querySelector("#modalExemplares").innerText = "";
                 modalDetalhes.querySelector("#modalSinopse").innerText = "";
@@ -303,11 +300,9 @@ document.querySelectorAll(".fecharModal").forEach((botao) => {
     });
 });
 
-//  CORREÇÃO: Fechar modal e limpar imagem
 modalCadastro.addEventListener("click", (e) => {
     if (e.target === modalCadastro) {
         modalCadastro.close();
-        //  LIMPAR IMAGEM QUANDO FECHAR
         imagemSelecionada = null;
         inputCapa.value = "";
     }
@@ -333,7 +328,7 @@ inputCapa.addEventListener('change', function() {
         
         reader.onload = function(e) {
             imagemSelecionada = e.target.result;
-            console.log(" Imagem selecionada:", imagemSelecionada.substring(0, 50) + "...");
+            console.log("📷 Imagem selecionada:", imagemSelecionada.substring(0, 50) + "...");
         }
         
         reader.readAsDataURL(file);
