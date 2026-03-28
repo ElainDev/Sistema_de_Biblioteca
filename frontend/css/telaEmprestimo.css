@@ -1,0 +1,344 @@
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--corBege);
+  overflow-x: hidden;
+}
+
+.mainDiv main {
+  padding: 2.5rem 1.5rem;
+}
+
+.mainDiv main h1 {
+  font-weight: 600;
+  font-size: 2rem;
+  color: var(--corPreto);
+  margin-bottom: 3rem;
+}
+
+.registrarEVisualizar {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.botaoRegistrar,
+.botaoTabelaGeral {
+  background-color: var(--corMarrom);
+  color: var(--corBranco);
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 30px;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.botaoRegistrar:hover,
+.botaoTabelaGeral:hover {
+  background-color: var(--corPreto);
+}
+
+.mainDiv main h2 {
+  font-weight: 600;
+  font-size: 2rem;
+  color: var(--corPreto);
+  margin: 2rem 0 1rem 0;
+}
+
+.btnQtd {
+  background-color: transparent;
+  border: solid 2px var(--corCinzaEscuro);
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+  cursor: pointer;
+  color: var(--corCinzaEscuro);
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.btnQtd:hover {
+  background-color: var(--corPreto);
+  color: var(--corBranco);
+}
+
+.infoTabela {
+  font-size: 1rem;
+  color: var(--corCinzaEscuro);
+  margin-top: 0.5rem;
+}
+
+/* BUSCA */
+.campoBusca {
+  display: flex;
+  align-items: center;
+  min-width: 220px;
+  background-color: var(--corCinzaClaro);
+  border-radius: 100px;
+  padding: 0 0.75rem;
+}
+
+.campoBusca input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0.4rem 0;
+  font-size: 0.9rem;
+}
+.iconeBusca {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  margin-right: 0.5rem;
+}
+
+.iconeBusca svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--corCinzaEscuro);
+  fill: none;
+  display: block;
+}
+
+/* TABELA */
+.topoTabela {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.controleTabela {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--corCinzaEscuro);
+}
+.tabelaRegistro {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+.tabelaRegistro td:nth-child(3) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tabelaRegistro th:nth-child(3),
+.tabelaRegistro td:nth-child(3) {
+  width: 200px; /* coluna do título */
+}
+
+.tabelaRegistro th:nth-child(1),
+.tabelaRegistro td:nth-child(1) {
+  width: 50px; /* ID */
+}
+
+.tabelaRegistro th:nth-child(8),
+.tabelaRegistro td:nth-child(8) {
+  width: 180px;
+}
+
+.tabelaRegistro thead {
+  border-bottom: 0.2rem solid var(--corCinzaClaro);
+}
+
+.tabelaSuperior {
+  font-weight: 500;
+}
+
+.tabelaRegistro td,
+.tabelaSuperior {
+  background: var(--corBranco);
+  color: var(--corCinzaEscuro);
+  border: none;
+  padding: 8px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* STATUS */
+.pendente td {
+  background: var(--corRosa);
+  color: var(--corVermelho);
+}
+
+.devolvido td {
+  background: var(--corVerdeClaro);
+  color: var(--corCinzaEscuro);
+}
+
+#paginaAtualTexto {
+  color: var(--corCinzaEscuro);
+}
+
+/* POPUP */
+#popupRegistrar {
+  background-color: var(--corBranco);
+  border-radius: 30px;
+  border: none;
+  width: 50%;
+  max-width: 600px;
+  padding: 1.5rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#popupRegistrar::backdrop {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.botaoFechar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.formPopUp {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formPopUp label {
+  font-size: 1rem;
+  font-weight: 600;
+  padding-left: 0.75rem;
+}
+
+.campoInteiro {
+  width: 100%;
+}
+
+.linha {
+  display: flex;
+  gap: 1rem;
+}
+
+.linha span {
+  flex: 1;
+}
+
+.linhaFinal {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.linhaFinal span {
+  flex: 1;
+}
+
+.linhaFinal button {
+  height: 2.2rem;
+  white-space: nowrap;
+}
+
+.formPopUp input,
+.formPopUp select {
+  background-color: var(--corCinzaClaro);
+  border: none;
+  border-radius: 100px;
+  outline: none;
+  font-size: 1rem;
+  width: 100%;
+  padding: 0 0.75rem;
+  height: 2.2rem;
+}
+
+.botaoregistrar {
+  background-color: var(--corMarrom);
+  color: var(--corBranco);
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 30px;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.botaoregistrar:hover {
+  background-color: var(--corPreto);
+}
+
+/* BOTÕES DA TABELA */
+.botaoEditar {
+  background-color: transparent;
+  color: var(--corCinzaEscuro);
+  border: solid 2px var(--corCinzaEscuro);
+  padding: 0.3rem 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.botaoEditar:hover {
+  background-color: var(--corPreto);
+  color: var(--corBranco);
+}
+
+.paginacao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* IMPRESSÃO */
+@media print {
+  body * {
+    visibility: hidden;
+    font-size: 0.5rem;
+  }
+  #tabelaEmprestimos,
+  #tabelaEmprestimos * {
+    visibility: visible;
+  }
+  #tabelaEmprestimos {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  #tabelaEmprestimos th,
+  #tabelaEmprestimos td {
+    border: 1px solid #000;
+    padding: 4px;
+    color: #000;
+  }
+  #tabelaEmprestimos th:last-child,
+  #tabelaEmprestimos td:last-child {
+    display: none;
+  }
+
+  #tabelaEmprestimos button {
+    display: none;
+  }
+
+  #tabelaEmprestimos thead {
+    border-bottom: none !important;
+  }
+}
