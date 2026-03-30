@@ -62,25 +62,24 @@
   margin-top: 2rem;
 }
 
-.tabelaRegistro tr {
+.tabelaRegistro thead tr {
   border-bottom: 0.2rem solid var(--corCinzaClaro);
 }
-
-.tabelaSuperior,
 td {
-  border: none;
-  padding: 8px;
-  text-align: center;
   background-color: var(--corBranco);
   color: var(--corPreto);
 }
-
 .tabelaSuperior {
   background: var(--corMarrom);
   color: var(--corBranco);
   font-weight: 500;
 }
-
+.tabelaSuperior,
+td {
+  border: none;
+  padding: 8px;
+  text-align: center;
+}
 /* POPUP DE REGISTRO DE USUÁRIO */
 
 #popupRegistrar::backdrop {

@@ -101,26 +101,3 @@
 .dropCheck:checked + .botaoSideBar .seta {
   transform: rotate(180deg);
 }
-
-/* As configurações do filtro ficam aqui */
-.filtro {
-  margin-top: 4rem;
-}
-.itensDoFiltro ul {
-  list-style: none;
-  margin: 0 1.5rem 1rem 1.5rem;
-}
-.itensDoFiltro li {
-  margin-top: 1rem;
-  padding: 0 1.5rem;
-}
-.itensDoFiltro a {
-  color: var(--corPreto);
-  font-size: 1rem;
-  text-decoration: none;
-
-  transition: all 0.3s ease;
-}
-.itensDoFiltro a:hover {
-  color: var(--corMarrom);
-}

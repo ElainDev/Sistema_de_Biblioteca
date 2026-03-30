@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/sideBar.css">
     <link rel="stylesheet" href="css/topBar.css">
-    <link rel="stylesheet" href="css/telasCadastro.css">
+    <link rel="stylesheet" href="css/telaEmprestimo.css">
 
 </head>
 
@@ -45,12 +45,12 @@
                         </svg>
                     </label>
                     <ul class="itensEscondidos">
-                        <li><a href="#">Usuários</a></li>
+                        <li><a href="cadastroUsuarios.html">Usuários</a></li>
                         <li><a href="cadastroEditoras.html">Editoras</a></li>
                     </ul>
                 </div>
 
-                <a href="emprestimoLivros.html" class="sideBarBotao">
+                <a href="#" class="sideBarBotao">
                     <span class="iconeBotaoSideBar">
                         <svg viewBox="0 0 24 24">
                             <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -75,73 +75,105 @@
                             class="img-perfil"></a>
                 </div>
             </nav>
+
             <main>
-                <h1>Usuários</h1>
-                <div class="buscarEregistrar">
+                <h1>Empréstimos de Livros</h1>
+                <div class="registrarEVisualizar">
+                    <button class="botaoRegistrar">Registrar novo empréstimo</button>
+                    <button class="botaoTabelaGeral" id="btnImprimirGeral">Imprimir tabela geral</button>
+                </div>
+                <h2>Tabela geral de empréstimo</h2>
+
+                <div class="topoTabela">
+                    <div class="controleTabela">
+                        <span>Exibir</span>
+                        <button class="btnQtd" onclick="mudarLimite(10)">10</button>
+                        <button class="btnQtd" onclick="mudarLimite(20)">20</button>
+                        <button class="btnQtd" onclick="mudarLimite(30)">30</button>
+                        <span>registros</span>
+                    </div>
                     <div class="campoBusca">
                         <span class="iconeBusca">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <circle cx="11" cy="11" r="7"></circle>
                                 <line x1="16.65" y1="16.65" x2="21" y2="21"></line>
                             </svg>
                         </span>
-                        <input type="search" placeholder="Pesquisar usuário..." id="buscarUsuario">
+                        <input type="search" placeholder="Buscar registro..." id="buscarRegistro">
                     </div>
-                    <button class="botaoregistrar">Registrar Usuário</button>
                 </div>
 
                 <!-- Tabela de registros -->
-                <table class="tabelaRegistro">
+                <table class="tabelaRegistro" id="tabelaEmprestimos">
                     <thead>
                         <tr>
                             <th class="tabelaSuperior">ID</th>
-                            <th class="tabelaSuperior">Matricula</th>
-                            <th class="tabelaSuperior">Nome</th>
-                            <th class="tabelaSuperior">Curso</th>
-                            <th class="tabelaSuperior">Telefone</th>
+                            <th class="tabelaSuperior">Usuário</th>
+                            <th class="tabelaSuperior">Título</th>
+                            <th class="tabelaSuperior">Data do empréstimo</th>
+                            <th class="tabelaSuperior">Devolução</th>
+                            <th class="tabelaSuperior">Quantidade</th>
                             <th class="tabelaSuperior">Situação</th>
                             <th class="tabelaSuperior">Editar</th>
                         </tr>
                     </thead>
-                    <tbody id="tabelaUsuarios"></tbody>
+                    <tbody id="tabelaUsuarios">
+                    </tbody>
                 </table>
-
+                <p id="infoTabela" class="infoTabela"></p>
+                <div class="paginacao">
+                    <button onclick="paginaAnterior()" class="btnQtd">Anterior</button>
+                    <span id="paginaAtualTexto">Página 1</span>
+                    <button onclick="proximaPagina()" class="btnQtd">Próximo</button>
+                </div>
     </div>
     </main>
     </section>
+
+    <!-- popup -->
     <dialog id="popupRegistrar">
         <button class="botaoFechar">X</button>
         <form class="formPopUp" id="formUsuario">
             <span class="campoInteiro">
-                <label>Nome</label>
-                <input placeholder="Digite o nome do usuário..." type="text" id="nomeUsuario" required>
+                <label>Título do livro</label>
+                <input type="text" id="inputLivro" list="listaLivros" placeholder="Digite o título" required>
+                <datalist id="listaLivros"></datalist>
             </span>
+
+            <span class="campoInteiro">
+                <label>Usuário</label>
+                <input type="text" id="inputUsuario" list="listaUsuarios" placeholder="Nome ou matrícula" required>
+                <datalist id="listaUsuarios"></datalist>
+            </span>
+
             <div class="linha">
                 <span>
-                    <label>Matricula</label>
-                    <input placeholder="Digite a matricula..." type="text" id="matriculaUsuario" required>
+                    <label>Data do empréstimo</label>
+                    <input type="date" id="dataEmprestimo" required>
                 </span>
                 <span>
-                    <label>Curso</label>
-                    <input placeholder="Digite o curso..." type="text" id="cursoUsuario" required>
+                    <label>Data de devolução</label>
+                    <input type="date" id="dataDevolucao" required>
                 </span>
             </div>
-            <div class="linhaTelefone">
+
+            <div class="linhaFinal">
                 <span>
-                    <label>Telefone</label>
-                    <input placeholder="Digite o telefone..." type="tel" id="telefoneUsuario">
+                    <label>Quantidade</label>
+                    <input type="number" id="quantidade" min="1" required>
                 </span>
-                <button class="botaoregistrar" type="submit">Registrar usuário</button>
+
+                <button class="botaoregistrar" type="submit">
+                    Registrar empréstimo
+                </button>
             </div>
         </form>
     </dialog>
 
-
+    <!-- script para emprestimo -->
+    <script src="js/emprestimos.js"></script>
     <!-- script para mudar a foto de perfil do user -->
     <script src="js/uploadPerfil.js"></script>
-    <!-- script para configurar a tabela de usuários -->
-    <script src="js/usuarios.js"></script>
 </body>
 
 </html>
