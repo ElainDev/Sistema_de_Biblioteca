@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
     <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    
 </head>
 <body>
-    <h1>Bem vindo(a)</h1>
-    <p>Por favor, insira seus dados.</p>
-    <div class="Login_input">
-        <p>Login</p>
-        <input type="text">
-        <p>Senha</p>
-        <input type="text">
-        <button>Entrar</button>
-        <p>Cadastrar</p>
-        <img src="assets/img/imagem_biblioteca.jpeg" alt="">
-    </div>
+        <div class="BemVindo">
+            <h1>Bem vindo(a)</h1>
+            <p>Por favor, insira seus dados.</p>
+        </div>
+        <!--<div class="Login_input">
+            <p>Login</p>-->
+            <input type="text" class="form_login" value="Login">
+            <p>Senha</p>
+            <input type="text" class="form_senha" value="Senha" >
+            <input type="button" value="Entrar" id="botaoEntrar">
+            <p class="cadastro_login">Não tem uma conta? Cadastre-se</p>
+        </div>
+        <div class="biblioteca">
+            <img src="assets/img/imagem_biblioteca.jpeg" alt="" class="img-biblioteca">
+        </div>
+    
+    
 </body>
 </html>
