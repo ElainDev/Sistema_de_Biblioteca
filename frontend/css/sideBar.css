@@ -6,7 +6,7 @@
 /* páginas.                      */
 /* ============================= */
 
-.sideBar {
+.side-bar {
   padding: 2rem var(--paddingGeral);
   display: flex;
   flex-direction: column;
@@ -19,24 +19,24 @@
 
   overflow-y: auto;
 }
-.mainDiv {
+.main-div {
   margin-left: 250px;
 }
 
-.sideBar nav {
+.side-bar nav {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-.tituloPaginas {
+.titulo-paginas {
   font-weight: 600;
   font-size: 2rem;
   padding: 1rem 0;
   color: var(--corPreto);
 }
 
-.tituloSidebar {
+.titulo-sidebar {
   font-weight: 600;
   font-size: 1.25rem;
   color: var(--corPreto);
@@ -44,7 +44,7 @@
   background-color: var(--corBranco);
 }
 
-.sideBarBotao {
+.side-bar-botao {
   padding: 1rem 0;
   display: flex;
   flex-direction: row;
@@ -58,20 +58,20 @@
   transition: all 0.3s ease;
 }
 
-.sideBarBotao:hover {
+.side-bar-botao:hover {
   color: var(--corMarrom);
 }
 
-.iconeBotaoSideBar svg {
+.icone-botao-side-bar svg {
   width: 24px;
   height: 24px;
 }
 
 /* Botão dropdown da SideBar (vou enlouquecer) */
-.dropCheck {
+.drop-check {
   display: none;
 }
-.botaoSideBar {
+.botao-side-bar-toggle {
   padding: 1rem 0;
   display: flex;
   flex-direction: row;
@@ -84,7 +84,7 @@
 
   transition: all 0.3s ease;
 }
-.botaoSideBar:hover {
+.botao-side-bar-toggle:hover {
   color: var(--corMarrom);
 }
 
@@ -95,30 +95,30 @@
   height: 20px;
   transition: transform 0.3s ease;
 }
-.itensEscondidos {
+.itens-escondidos {
   list-style: none;
   padding-left: var(--paddingGeral);
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
 }
-.itensEscondidos li {
+.itens-escondidos li {
   padding: 1rem 0;
 }
-.itensEscondidos li a {
+.itens-escondidos li a {
   text-decoration: none;
   color: var(--corPreto);
   transition: all 0.3s ease;
 }
-.itensEscondidos li a:hover {
+.itens-escondidos li a:hover {
   color: var(--corMarrom);
 }
 
-.dropCheck:checked ~ .itensEscondidos {
+.drop-check:checked ~ .itens-escondidos {
   max-height: 200px;
 }
 /* Aqui faz a seta girar */
-.dropCheck:checked + .botaoSideBar .seta {
+.drop-check:checked + .botao-side-bar-toggle .seta {
   transform: rotate(180deg);
 }
 

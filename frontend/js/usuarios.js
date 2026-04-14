@@ -1,8 +1,8 @@
-const tabela = document.getElementById("tabelaUsuarios");
+const tabela = document.getElementById("tabela-usuarios");
 const abrirModal = document.getElementById("abrirModal");
 const botaoRegistrarPopUp = document.getElementById("botao-registrar");
-const modal = document.getElementById("popupRegistrar");
-const botaoFechar = document.querySelector(".botaoFechar");
+const modal = document.getElementById("popup-registrar");
+const botaoFechar = document.querySelector(".botao-fechar");
 const form = document.getElementById("formUsuario");
 const campoBusca = document.getElementById("buscarUsuario");
 
@@ -39,8 +39,8 @@ function renderTabela(lista = usuarios) {
         <td>${user.telefone}</td>
         <td>${user.situacao}</td>
         <td>
-            <button onclick="editarUsuario(${index})" class="botaoEditar">EDITAR</button>
-            <button onclick="apagarUsuario(${index})" class="botaoEditar">APAGAR</button>
+            <button onclick="editarUsuario(${index})" class="botao-editar">EDITAR</button>
+            <button onclick="apagarUsuario(${index})" class="botao-editar">APAGAR</button>
         </td>
     `;
 

@@ -18,17 +18,17 @@ body {
   height: 100vh;
 }
 
-.BemVindo {
+.bem-vindo {
   margin-bottom: 2rem;
   text-align: center;
 }
 
-.BemVindo h1 {
+.bem-vindo h1 {
   font-size: 2.5rem;
   letter-spacing: -1px;
 }
 
-.BemVindo p {
+.bem-vindo p {
   font-size: 1rem;
   letter-spacing: -1px;
 }

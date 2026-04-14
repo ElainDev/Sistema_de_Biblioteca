@@ -1,26 +1,26 @@
-.mainDiv {
+.main-div {
   background-color: var(--corBranco);
   display: flex;
   justify-content: center;
 }
-.mainDiv main {
+.main-div main {
   width: 100%;
 }
 
-.topBarProfile {
+.top-bar-profile {
   position: relative;
-  height: 180px; /* controla o tamanho da faixa marrom */
-  background-color: var(--corBege); /* ou marrom se for o caso */
+  height: 180px;
+  background-color: var(--corBege);
 }
 
-.conteudoProfile {
+.conteudo-profile {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   margin-top: 2rem;
 }
-.perfilHeader {
+.perfil-header {
   position: absolute;
   left: 50%;
   bottom: -3rem;
@@ -37,7 +37,7 @@
   display: block;
 }
 
-.circleEditar {
+.circle-editar {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -58,33 +58,33 @@
   color: var(--corMarrom);
 }
 
-.iconeUpload {
+.icone-upload {
   width: 24px;
   height: 24px;
 }
 
-.nameUser {
+.name-user {
   font-size: 2rem;
   font-weight: 600;
   color: var(--corPreto);
   margin: 2rem 0 0.5rem 0;
 }
 
-.cargoUser {
+.cargo-user {
   font-size: 1.5rem;
   font-weight: 500;
   color: var(--corCinzaEscuro);
   margin: 0 0 1rem 0;
 }
 
-.emailUser {
+.email-user {
   font-size: 1rem;
   font-weight: 400;
   color: var(--corCinzaEscuro);
   margin: 0;
 }
 
-.botaoPerfil {
+.botao-perfil {
   margin: 2rem 0 1.5rem 0;
   padding: 0.5rem 6rem;
   background-color: var(--corMarrom);
@@ -97,6 +97,6 @@
   transition: all 0.3s ease;
 }
 
-.botaoPerfil:hover {
+.botao-perfil:hover {
   background-color: var(--corPreto);
 }

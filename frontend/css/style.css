@@ -39,11 +39,11 @@
 /* ============================= */
 .container {
   min-height: 100vh;
-  background-color: white;
+  background-color: var(--corBranco);
   display: flex;
 }
 
 /*main*/
-.mainDiv {
+.main-div {
   flex: 1;
 }

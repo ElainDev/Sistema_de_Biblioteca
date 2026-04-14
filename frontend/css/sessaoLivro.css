@@ -1,8 +1,8 @@
-.mainDiv {
+.main-div {
   background-color: #f1e4cc;
 }
 /* Container do título e botão */
-.sessaoLivro {
+.sessao-livro {
   display: flex;
   align-items: center; /* alinha verticalmente o conteúdo */
   justify-content: space-between; /* título e botão com espaço entre eles */
@@ -13,7 +13,7 @@
 }
 
 /* Título */
-.sessaoLivro h1 {
+.sessao-livro h1 {
   color: #2c2725;
   margin: 0; /* remove margin para controle melhor */
   padding: 0; /* remove padding extra */
@@ -21,7 +21,7 @@
 }
 
 /* Botão */
-.sessaoLivro button {
+.sessao-livro button {
   background-color: #8c6046;
   color: white;
   display: block;
@@ -36,7 +36,7 @@
   border: none; /* tira a sombra do botao*/
 }
 
-div.scrollingDiv {
+div.scrolling-div {
   overflow: auto;
 }
 
@@ -127,7 +127,7 @@ dialog {
   text-align: left;
 }
 
-.modalLivro {
+.modal-livro {
   width: 900px;
   border: none;
   border-radius: 20px;
@@ -136,16 +136,16 @@ dialog {
   position: fixed; /* pra deixar o card fixado ao abaixar o scroll*/
 }
 
-.modalLivro::backdrop {
+.modal-livro::backdrop {
   background: rgba(0, 0, 0, 0.4);
 }
 
-.modalContainer {
+.modal-container {
   display: flex;
   gap: 30px;
 }
 
-.capaLivro {
+.capa-livro {
   width: 200px;
   height: 310px;
   background: #d9d9d9;
@@ -156,7 +156,7 @@ dialog {
   font-size: 40px;
 }
 
-.formLivro {
+.form-livro {
   flex: 1;
   grid-column: 2;
 }
@@ -204,7 +204,7 @@ dialog {
   color: #000;
 }
 
-.btnRegistrar {
+.btn-registrar {
   border: none;
   padding: 10px 20px;
   border-radius: 20px;
@@ -212,7 +212,7 @@ dialog {
   cursor: pointer;
 }
 
-.modalLivro .fecharModal {
+.modal-livro .fechar-modal {
   position: absolute;
   top: 5px;
   right: 15px;
@@ -225,7 +225,7 @@ dialog {
 
 /* card de registrar livros */
 /* Container dos cards */
-.cardsRegistro {
+.cards-registro {
   position: absolute;
   inset: 0;
   display: none;
@@ -308,7 +308,7 @@ dialog {
   color: #000;
 }
 
-.modalLivro .fecharModal,
+.modal-livro .fechar-modal,
 #fecharResultado {
   position: absolute;
   top: 0%;
@@ -338,14 +338,14 @@ dialog {
 }
 
 /* Container interno: capa + informações */
-#modalDetalhes .modalContainer {
+#modalDetalhes .modal-container {
   display: flex;
   gap: 30px;
   flex-wrap: wrap; /* responsivo em telas menores */
 }
 
 /* Capa do livro */
-#modalDetalhes .capaLivro {
+#modalDetalhes .capa-livro {
   width: 200px;
   height: 310px;
   background: #d9d9d9;
@@ -356,7 +356,7 @@ dialog {
   overflow: hidden;
 }
 
-#modalDetalhes .capaLivro img {
+#modalDetalhes .capa-livro img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -364,7 +364,7 @@ dialog {
 }
 
 /* Informações do livro */
-#modalDetalhes .infoLivro {
+#modalDetalhes .info-livro {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -372,29 +372,29 @@ dialog {
 }
 
 /* Campos de informação */
-#modalDetalhes .infoLivro .campo {
+#modalDetalhes .info-livro .campo {
   display: flex;
   flex-direction: column;
 }
 
-#modalDetalhes .infoLivro .campo label {
+#modalDetalhes .info-livro .campo label {
   font-weight: 600;
   margin-bottom: 5px;
 }
 
 /* Campos pequenos (Nº de páginas, exemplares) */
-#modalDetalhes .infoLivro .pequeno p {
+#modalDetalhes .info-livro .pequeno p {
   max-width: 120px;
 }
 
 /* Sinopse */
-#modalDetalhes .infoLivro .sinopse p {
+#modalDetalhes .info-livro .sinopse p {
   height: auto;
   min-height: 80px;
 }
 
 /* Botão fechar */
-#modalDetalhes .fecharModal {
+#modalDetalhes .fechar-modal {
   position: absolute;
   top: 5px;
   right: 15px;
@@ -412,17 +412,17 @@ dialog {
     padding: 20px;
   }
 
-  #modalDetalhes .modalContainer {
+  #modalDetalhes .modal-container {
     flex-direction: column; /* imagem acima do texto em telas menores */
     align-items: center;
   }
 
-  #modalDetalhes .capaLivro {
+  #modalDetalhes .capa-livro {
     width: 60%;
     height: auto;
   }
 
-  #modalDetalhes .infoLivro {
+  #modalDetalhes .info-livro {
     width: 100%;
   }
 }
@@ -433,13 +433,13 @@ dialog {
     padding: 15px;
   }
 
-  #modalDetalhes .capaLivro {
+  #modalDetalhes .capa-livro {
     width: 100%;
     height: 250px;
   }
 }
 
-#modalDetalhes .infoLivro .campo p {
+#modalDetalhes .info-livro .campo p {
   margin: 0;
   padding: 12px 6px; /* aumenta o espaço interno */
   font-size: 0.7rem; /* tamanho do texto */
@@ -447,32 +447,32 @@ dialog {
   border-radius: 20px;
 }
 
-.capaLivro{
-    display: flex;
-    flex-direction: column; /* coloca os elementos um embaixo do outro */
-    align-items: center;    /* centraliza horizontalmente */
-    gap: 10px;              /* espaço entre o card e o botão */
+.capa-livro {
+  display: flex;
+  flex-direction: column; /* coloca os elementos um embaixo do outro */
+  align-items: center; /* centraliza horizontalmente */
+  gap: 10px; /* espaço entre o card e o botão */
 }
 
-#clicarCapa{
-    width: 180px;
-    height: 240px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#clicarCapa {
+  width: 180px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-#botaoSelecionarCapa{
-    margin-top: 8px;
+#botaoSelecionarCapa {
+  margin-top: 8px;
 }
 
 /* =====================================
    BOTÕES DE AÇÃO NO MODAL DE DETALHES (CANTO INFERIOR ESQUERDO)
 ===================================== */
-#modalDetalhes .infoLivro {
+#modalDetalhes .info-livro {
   position: relative;
 }
 
-#modalDetalhes .acoesModal {
+#modalDetalhes .acoes-modal {
   position: absolute;
   bottom: auto;
   left: 60%;
@@ -480,8 +480,8 @@ dialog {
   gap: 10px;
 }
 
-#modalDetalhes .btnEditarModal,
-#modalDetalhes .btnExcluirModal {
+#modalDetalhes .btn-editar-modal,
+#modalDetalhes .btn-excluir-modal {
   background-color: #8c6046;
   color: white;
   display: block;
@@ -497,11 +497,11 @@ dialog {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-#modalDetalhes .btnExcluirModal {
+#modalDetalhes .btn-excluir-modal {
   background-color: #b84b42;
 }
 
-#modalDetalhes .btnEditarModal:hover,
-#modalDetalhes .btnExcluirModal:hover {
+#modalDetalhes .btn-editar-modal:hover,
+#modalDetalhes .btn-excluir-modal:hover {
   opacity: 0.8;
 }

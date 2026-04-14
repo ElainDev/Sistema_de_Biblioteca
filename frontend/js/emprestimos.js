@@ -1,10 +1,10 @@
-const tabela = document.getElementById("tabelaUsuarios");
+const tabela = document.getElementById("tabela-usuarios");
 const campoBusca = document.getElementById("buscarRegistro");
 const infoTabela = document.getElementById("infoTabela");
 
-const modal = document.getElementById("popupRegistrar");
-const botaoAbrir = document.querySelector(".botaoRegistrar");
-const botaoFechar = document.querySelector(".botaoFechar");
+const modal = document.getElementById("popup-registrar");
+const botaoAbrir = document.querySelector(".botao-registrar");
+const botaoFechar = document.querySelector(".botao-fechar");
 const form = document.getElementById("formUsuario");
 
 const inputUsuario = document.getElementById("inputUsuario");

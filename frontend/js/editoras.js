@@ -1,6 +1,6 @@
-const tabela = document.getElementById("tabelaEditora");
-const modal = document.getElementById("popupRegistrar");
-const botaoFechar = document.querySelector(".botaoFechar");
+const tabela = document.getElementById("tabela-editora");
+const modal = document.getElementById("popup-registrar");
+const botaoFechar = document.querySelector(".botao-fechar");
 const form = document.getElementById("formEditora");
 const campoBusca = document.getElementById("buscarEditora");
 const botaoAbrirModal = document.getElementById("abrirModal");
@@ -39,8 +39,8 @@ function renderTabela(lista = editoras) {
         <td>${editora.telefone}</td>
         <td>${editora.email}</td>
         <td>
-            <button onclick="editarEditora(${index})" class="botaoEditar">EDITAR</button>
-            <button onclick="apagarEditora(${index})" class="botaoEditar">APAGAR</button>
+            <button onclick="editarEditora(${index})" class="botao-editar">EDITAR</button>
+            <button onclick="apagarEditora(${index})" class="botao-editar">APAGAR</button>
         </td>
     `;
 
@@ -160,3 +160,6 @@ campoBusca.addEventListener("input", function () {
 });
 
 renderTabela();
+
+window.editarEditora = editarEditora;
+window.apagarEditora = apagarEditora;
