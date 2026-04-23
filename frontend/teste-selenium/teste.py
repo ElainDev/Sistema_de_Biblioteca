@@ -8,8 +8,9 @@ import os
 # TELA DE CADASTRO DE USUÁRIO
 
 # variável da url
-caminho_html_usuario = 'C:/Users/Joao Vitor/Documents/GitHub/Sistema_de_Biblioteca/frontend/cadastroUsuarios.html'
-caminho_html_editora = 'C:/Users/Joao Vitor/Documents/GitHub/Sistema_de_Biblioteca/frontend/cadastroEditoras.html'
+caminho_html_usuario = 'C:/Users/Aluno/Downloads/Sistema_de_Biblioteca-main/Sistema_de_Biblioteca-main/frontend/cadastroUsuarios.html'
+caminho_html_editora = 'C:/Users/Aluno/Downloads/Sistema_de_Biblioteca-main/Sistema_de_Biblioteca-main/frontend/cadastroEditoras.html'
+caminho_html_index = 'C:/Users/Aluno/Downloads/Sistema_de_Biblioteca-main/Sistema_de_Biblioteca-main/frontend/index.html'
 
 #injeta o drive do selenium no chrome
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
@@ -135,6 +136,70 @@ for editora in editoras:
     time.sleep(5)
 
 registrarEditora = driver.find_element(By.ID, "botao-registrar").click()
+
+# TELA DE INDEX
+driver.get(caminho_html_index) # Abre a tela do index
+time.sleep(5) # Tempo 
+
+#clica no botao de registrar usuario
+abrirModalIndex = driver.find_element(By.ID, "botao-registrar-livro").click()
+
+#Variáveis do modal:
+isbnIndex = driver.find_element(By.ID, "isbnLivro")
+
+anoPublicacaoIndex = driver.find_element(By.ID, "anoLivro")
+
+tituloLivroIndex = driver.find_element(By.ID, "tituloLivro")
+
+EditoraLivroIndex = driver.find_element(By.ID, "editoraLivro")
+
+paginaLivroIndex = driver.find_element(By.ID, "paginasLivro")
+
+autorLivroIndex = driver.find_element(By.ID, "autorLivro")
+
+numeroExemplareIndex = driver.find_element(By.ID, "exemplaresLivro")
+
+sinopseLivroIndex = driver.find_element(By.ID, "sinopseLivro")
+
+#exemplo de teste de editor
+registroLivro = [
+    { 
+      "isbnIndex": "TestandoIsbn",
+      "anoPublicacaoIndex": 25072001, 
+      "tituloLivroIndex": "Socorro",
+      "paginaLivroIndex": "editora.oficial@gmail.com",
+      "autorLivroIndex": "Estudante",
+      "numeroExemplareIndex": "1236",
+      "sinopseLivroIndex": "Alunos desesperado e sofredo pela vda academica"
+    }
+]
+
+# adicioando valores aos inputs do modal
+for livro in registroLivro:
+
+    isbnIndex.send_keys(livro["isbnIndex"])
+    time.sleep(2)
+    
+    anoPublicacaoIndex.send_keys(livro["anoPublicacaoIndex"])
+    time.sleep(2)
+    
+    tituloLivroIndex.send_keys(livro["tituloLivroIndex"])
+    time.sleep(2)
+    
+    paginaLivroIndex.send_keys(livro["paginaLivroIndex"])
+    time.sleep(5)
+    
+    autorLivroIndex.send_keys(livro["autorLivroIndex"])
+    time.sleep(5)
+
+    numeroExemplareIndex.send_keys(livro["numeroExemplareIndex"])
+    time.sleep(5)
+    
+    sinopseLivroIndex.send_keys(livro["sinopseLivroIndex"])
+    time.sleep(5)
+
+registrarLivro = driver.find_element(By.ID, "botao-registrar-livro").click()
+
 
 time.sleep(5)
 #fechar a tela
