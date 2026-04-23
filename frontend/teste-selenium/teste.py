@@ -8,8 +8,8 @@ import os
 # TELA DE CADASTRO DE USUÁRIO
 
 # variável da url
-caminho_html_usuario = 'C:/Users/Aluno/Downloads/Sistema_de_Biblioteca-main/Sistema_de_Biblioteca-main/frontend/cadastroUsuarios.html'
-caminho_html_editora = 'C:/Users/Aluno/Downloads/Sistema_de_Biblioteca-main/Sistema_de_Biblioteca-main/frontend/cadastroEditoras.html'
+caminho_html_usuario = 'C:/Users/Joao Vitor/Documents/GitHub/Sistema_de_Biblioteca/frontend/cadastroUsuarios.html'
+caminho_html_editora = 'C:/Users/Joao Vitor/Documents/GitHub/Sistema_de_Biblioteca/frontend/cadastroEditoras.html'
 
 #injeta o drive do selenium no chrome
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
