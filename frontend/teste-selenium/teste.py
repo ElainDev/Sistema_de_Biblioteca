@@ -13,12 +13,12 @@ caminho_html_usuario = 'C:/Users/Aluno/Downloads/Sistema_de_Biblioteca-main/Sist
 caminho_html_editora = 'C:/Users/Aluno/Downloads/Sistema_de_Biblioteca-main/Sistema_de_Biblioteca-main/frontend/cadastroEditoras.html'
 caminho_html_index = 'C:/Users/Aluno/Downloads/Sistema_de_Biblioteca-main/Sistema_de_Biblioteca-main/frontend/index.html'
 
-
 #injeta o drive do selenium no chrome
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
 #pega a url sugerida
 driver.get(caminho_html_usuario)
+print("Tela de registro de usuarios aberta.")
 
 #aumenta a tela no navegador
 driver.maximize_window()
@@ -28,6 +28,7 @@ time.sleep(2)
 
 #clica no botao de registrar usuario
 abrirModal = driver.find_element(By.ID, "abrirModal").click()
+print("Botão registrar usuário clicado.")
 
 #tempo de espera
 time.sleep(3)
@@ -84,6 +85,7 @@ for usuario in usuarios:
 
 # click do registrar usuário
 registrarUsuario = driver.find_element(By.ID, "botao-registrar").click()
+print("Usuário registrado.")
 
 #tempo de espera
 time.sleep(5)
@@ -93,9 +95,11 @@ time.sleep(5)
 # TELA DE CADASTRO DE EDITORAS
 
 driver.get(caminho_html_editora)
+print("Tela de registro de editoras aberta.")
 time.sleep(5)
 #clica no botao de registrar usuario
 abrirModalEditora = driver.find_element(By.ID, "abrirModal").click()
+print("Botão registrar editora clicado.")
 
 #Variáveis do modal:
 nomeEditora = driver.find_element(By.ID, "nomeEditora")
@@ -113,7 +117,7 @@ editoras = [
     { 
       "nomeEditora": "Galera",
       "cnpjEditora": "156988745", 
-      "isbnEditora": "ksgvbuj024562",
+      "isbnEditora": "978-85-01",
       "telefoneEditora": 995047174,
       "emailEditora": "editora.oficial@gmail.com"
     }
@@ -139,14 +143,12 @@ for editora in editoras:
 
 registrarEditora = driver.find_element(By.ID, "botao-registrar").click()
 
-
-# TELA DE INDEX
+# TELA DE REGISTRO DE LIVROS
 driver.get(caminho_html_index) # Abre a tela do index
-time.sleep(5) 
+time.sleep(5) # Tempo 
 
 # clica no botao para abrir o modal de registro de livro
 abrirModalIndex = driver.find_element(By.ID, "botao-registrar-livro").click()
-time.sleep(5)
 
 # Variáveis do modal (Mapeando os IDs do seu HTML)
 isbnIndex = driver.find_element(By.ID, "isbnLivro")
@@ -161,13 +163,13 @@ sinopseLivroIndex = driver.find_element(By.ID, "sinopseLivro")
 registroLivro = [
     { 
       "isbnIndex": "TestandoIsbn",
-      "anoPublicacaoIndex": "25072001", 
+      "anoPublicacaoIndex": 25072001, 
       "tituloLivroIndex": "Socorro",
       "editora": "Outra", 
       "paginaLivroIndex": "300",
       "autorLivroIndex": "Estudante",
       "numeroExemplareIndex": "1236",
-      "sinopseLivroIndex": "Alunos desesperados e sofrendo pela vida académica"
+      "sinopseLivroIndex": "Alunos desesperado e sofredo pela vda academica"
     }
 ]
 
@@ -198,16 +200,9 @@ for livro in registroLivro:
     sinopseLivroIndex.send_keys(livro["sinopseLivroIndex"])
     time.sleep(5)
 
-    
-    driver.find_element(By.ID, "botao-registrar-livro2").click()
-    time.sleep(2)
+registrarLivro = driver.find_element(By.ID, "botao-registrar-livro").click()
 
-    # CLIQUE NO BOTÃO "SIM" (Para confirmar o registo e aparecer o card de sucesso)
-    driver.find_element(By.ID, "confirmarRegistro").click()
-    
-    print("Aguardando o card de sucesso...")
-    time.sleep(5) # Tempo para o card de sucesso aparecer e ficar na tela
 
-# driver.quit() -> para a tela não fechar rápido
-
-print("O teste terminou! O card de sucesso deve estar visível no seu navegador.")
+time.sleep(5)
+#fechar a tela
+driver.quit()
