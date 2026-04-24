@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
 import time
 import os
 
@@ -11,6 +12,7 @@ import os
 caminho_html_usuario = 'C:/Users/Aluno/Downloads/Sistema_de_Biblioteca-main/Sistema_de_Biblioteca-main/frontend/cadastroUsuarios.html'
 caminho_html_editora = 'C:/Users/Aluno/Downloads/Sistema_de_Biblioteca-main/Sistema_de_Biblioteca-main/frontend/cadastroEditoras.html'
 caminho_html_index = 'C:/Users/Aluno/Downloads/Sistema_de_Biblioteca-main/Sistema_de_Biblioteca-main/frontend/index.html'
+
 
 #injeta o drive do selenium no chrome
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
@@ -137,70 +139,75 @@ for editora in editoras:
 
 registrarEditora = driver.find_element(By.ID, "botao-registrar").click()
 
+
 # TELA DE INDEX
 driver.get(caminho_html_index) # Abre a tela do index
-time.sleep(5) # Tempo 
+time.sleep(5) 
 
-#clica no botao de registrar usuario
+# clica no botao para abrir o modal de registro de livro
 abrirModalIndex = driver.find_element(By.ID, "botao-registrar-livro").click()
+time.sleep(5)
 
-#Variáveis do modal:
+# Variáveis do modal (Mapeando os IDs do seu HTML)
 isbnIndex = driver.find_element(By.ID, "isbnLivro")
-
 anoPublicacaoIndex = driver.find_element(By.ID, "anoLivro")
-
 tituloLivroIndex = driver.find_element(By.ID, "tituloLivro")
-
-EditoraLivroIndex = driver.find_element(By.ID, "editoraLivro")
-
 paginaLivroIndex = driver.find_element(By.ID, "paginasLivro")
-
 autorLivroIndex = driver.find_element(By.ID, "autorLivro")
-
 numeroExemplareIndex = driver.find_element(By.ID, "exemplaresLivro")
-
 sinopseLivroIndex = driver.find_element(By.ID, "sinopseLivro")
 
-#exemplo de teste de editor
+
 registroLivro = [
     { 
       "isbnIndex": "TestandoIsbn",
-      "anoPublicacaoIndex": 25072001, 
+      "anoPublicacaoIndex": "25072001", 
       "tituloLivroIndex": "Socorro",
-      "paginaLivroIndex": "editora.oficial@gmail.com",
+      "editora": "Outra", 
+      "paginaLivroIndex": "300",
       "autorLivroIndex": "Estudante",
       "numeroExemplareIndex": "1236",
-      "sinopseLivroIndex": "Alunos desesperado e sofredo pela vda academica"
+      "sinopseLivroIndex": "Alunos desesperados e sofrendo pela vida académica"
     }
 ]
 
-# adicioando valores aos inputs do modal
+# adicioando valores aos inputs do modal seguindo o SEU padrão FOR
 for livro in registroLivro:
 
     isbnIndex.send_keys(livro["isbnIndex"])
-    time.sleep(2)
+    time.sleep(5)
     
     anoPublicacaoIndex.send_keys(livro["anoPublicacaoIndex"])
-    time.sleep(2)
+    time.sleep(5)
     
     tituloLivroIndex.send_keys(livro["tituloLivroIndex"])
-    time.sleep(2)
+    time.sleep(5)
+
+    select_editora = Select(driver.find_element(By.ID, "editoraLivro"))
+    try:
+        select_editora.select_by_visible_text(livro["editora"])
+    except:
+        select_editora.select_by_index(1)
     
     paginaLivroIndex.send_keys(livro["paginaLivroIndex"])
     time.sleep(5)
-    
     autorLivroIndex.send_keys(livro["autorLivroIndex"])
     time.sleep(5)
-
     numeroExemplareIndex.send_keys(livro["numeroExemplareIndex"])
     time.sleep(5)
-    
     sinopseLivroIndex.send_keys(livro["sinopseLivroIndex"])
     time.sleep(5)
 
-registrarLivro = driver.find_element(By.ID, "botao-registrar-livro").click()
+    
+    driver.find_element(By.ID, "botao-registrar-livro2").click()
+    time.sleep(2)
 
+    # CLIQUE NO BOTÃO "SIM" (Para confirmar o registo e aparecer o card de sucesso)
+    driver.find_element(By.ID, "confirmarRegistro").click()
+    
+    print("Aguardando o card de sucesso...")
+    time.sleep(5) # Tempo para o card de sucesso aparecer e ficar na tela
 
-time.sleep(5)
-#fechar a tela
-driver.quit()
+# driver.quit() -> para a tela não fechar rápido
+
+print("O teste terminou! O card de sucesso deve estar visível no seu navegador.")
