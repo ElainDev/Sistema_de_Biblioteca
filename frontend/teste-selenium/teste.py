@@ -12,6 +12,8 @@ import os
 caminho_html_usuario = 'C:/Users/Aluno/Downloads/Sistema_de_Biblioteca-main/Sistema_de_Biblioteca-main/frontend/cadastroUsuarios.html'
 caminho_html_editora = 'C:/Users/Aluno/Downloads/Sistema_de_Biblioteca-main/Sistema_de_Biblioteca-main/frontend/cadastroEditoras.html'
 caminho_html_index = 'C:/Users/Aluno/Downloads/Sistema_de_Biblioteca-main/Sistema_de_Biblioteca-main/frontend/index.html'
+caminho_html_emprestimo = 'C:/Users/Aluno/Downloads/Sistema_de_Biblioteca-main/Sistema_de_Biblioteca-main/frontend/emprestimoLivros.html'
+
 
 #injeta o drive do selenium no chrome
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
@@ -142,13 +144,17 @@ for editora in editoras:
     time.sleep(5)
 
 registrarEditora = driver.find_element(By.ID, "botao-registrar").click()
+print("Editora registrada.")
+time.sleep(5) 
 
 # TELA DE REGISTRO DE LIVROS
 driver.get(caminho_html_index) # Abre a tela do index
-time.sleep(5) # Tempo 
+time.sleep(5) 
 
 # clica no botao para abrir o modal de registro de livro
 abrirModalIndex = driver.find_element(By.ID, "botao-registrar-livro").click()
+print("Botão registrar livro clicado.")
+time.sleep(5)
 
 # Variáveis do modal (Mapeando os IDs do seu HTML)
 isbnIndex = driver.find_element(By.ID, "isbnLivro")
@@ -162,14 +168,14 @@ sinopseLivroIndex = driver.find_element(By.ID, "sinopseLivro")
 
 registroLivro = [
     { 
-      "isbnIndex": "TestandoIsbn",
-      "anoPublicacaoIndex": 25072001, 
+      "isbnIndex": "978-85-01-11553-9",
+      "anoPublicacaoIndex": "01012005", 
       "tituloLivroIndex": "Socorro",
       "editora": "Outra", 
       "paginaLivroIndex": "300",
       "autorLivroIndex": "Estudante",
-      "numeroExemplareIndex": "1236",
-      "sinopseLivroIndex": "Alunos desesperado e sofredo pela vda academica"
+      "numeroExemplareIndex": "12",
+      "sinopseLivroIndex": "Alunos desesperados e sofrendo pela vida acadêmica"
     }
 ]
 
@@ -200,9 +206,62 @@ for livro in registroLivro:
     sinopseLivroIndex.send_keys(livro["sinopseLivroIndex"])
     time.sleep(5)
 
-registrarLivro = driver.find_element(By.ID, "botao-registrar-livro").click()
+    
+    driver.find_element(By.ID, "botao-registrar-livro2").click()
+    print("Livro registrado.")
+    time.sleep(2)
+
+     #TELA DE EMPRESTIMO
+
+driver.get(caminho_html_emprestimo)
+print("Tela de registro de empréstimos aberta.")
+time.sleep(2)
+
+#clica no botao de registrar emprestimo
+abrirModalEmprestimo = driver.find_element(By.ID, "abrir-modal-emprestimo").click()
+print("Botão registrar novo empréstimo clicado.")
+
+#Variáveis do modal:
+
+quantidadeLivros = driver.find_element(By.ID, "quantidade")
+tituloLivro = driver.find_element(By.ID, "inputLivro")
+usuarioCadastrado = driver.find_element(By.ID, "inputUsuario")
 
 
-time.sleep(5)
-#fechar a tela
-driver.quit()
+
+registroEmprestimo = [
+    { 
+      "quantidadeLivros": 2
+
+    }
+]
+
+for emprestimo in registroEmprestimo:
+
+    # XPath descreve o caminho ou os atributos de um elemento para encontrá-lo, mesmo que ele não tenha um nome próprio.
+    opcaoTitulo = driver.find_element(By.XPATH, "//datalist[@id='listaLivros']/option[last()]")
+    # procura o datalist, pelo id listaUaUsuarios, pega option e o last() pega o ultimo valor
+    valorLivro = opcaoTitulo.get_attribute("value") # pega o valor da opcao e salva nessa var
+
+    driver.find_element(By.ID, "inputLivro").send_keys(valorLivro)
+
+    time.sleep(2)
+
+    opcaoUsuario = driver.find_element(By.XPATH, "//datalist[@id='listaUsuarios']/option[last()]")
+    valorUsuario = opcaoUsuario.get_attribute("value")
+
+    driver.find_element(By.ID, "inputUsuario").send_keys(valorUsuario)
+
+    time.sleep(2)
+
+    quantidadeLivros.send_keys(emprestimo["quantidadeLivros"])
+    time.sleep(5)
+
+    driver.find_element(By.ID, "botao-registrar-emprestimo").click()
+    print("Empréstimo registrado.")
+    time.sleep(3)
+
+
+    print("O teste terminou sem problemas!")
+    driver.quit()
+    # driver.quit() -> para a tela não fechar rápido
