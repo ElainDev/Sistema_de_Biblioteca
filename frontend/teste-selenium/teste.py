@@ -2,7 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import Select
 import time
 import os
 
@@ -20,7 +19,6 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
 #pega a url sugerida
 driver.get(caminho_html_usuario)
-print("Tela de registro de usuarios aberta.")
 
 #aumenta a tela no navegador
 driver.maximize_window()
@@ -30,7 +28,6 @@ time.sleep(2)
 
 #clica no botao de registrar usuario
 abrirModal = driver.find_element(By.ID, "abrirModal").click()
-print("Botão registrar usuário clicado.")
 
 #tempo de espera
 time.sleep(3)
@@ -87,7 +84,6 @@ for usuario in usuarios:
 
 # click do registrar usuário
 registrarUsuario = driver.find_element(By.ID, "botao-registrar").click()
-print("Usuário registrado.")
 
 #tempo de espera
 time.sleep(5)
@@ -97,11 +93,9 @@ time.sleep(5)
 # TELA DE CADASTRO DE EDITORAS
 
 driver.get(caminho_html_editora)
-print("Tela de registro de editoras aberta.")
 time.sleep(5)
 #clica no botao de registrar usuario
 abrirModalEditora = driver.find_element(By.ID, "abrirModal").click()
-print("Botão registrar editora clicado.")
 
 #Variáveis do modal:
 nomeEditora = driver.find_element(By.ID, "nomeEditora")
@@ -119,7 +113,7 @@ editoras = [
     { 
       "nomeEditora": "Galera",
       "cnpjEditora": "156988745", 
-      "isbnEditora": "978-85-01",
+      "isbnEditora": "ksgvbuj024562",
       "telefoneEditora": 995047174,
       "emailEditora": "editora.oficial@gmail.com"
     }
@@ -147,62 +141,66 @@ registrarEditora = driver.find_element(By.ID, "botao-registrar").click()
 print("Editora registrada.")
 time.sleep(5) 
 
-# TELA DE REGISTRO DE LIVROS
+# TELA DE INDEX
 driver.get(caminho_html_index) # Abre a tela do index
 time.sleep(5) 
 
-# clica no botao para abrir o modal de registro de livro
+#clica no botao de registrar usuario
 abrirModalIndex = driver.find_element(By.ID, "botao-registrar-livro").click()
 print("Botão registrar livro clicado.")
 time.sleep(5)
 
-# Variáveis do modal (Mapeando os IDs do seu HTML)
+#Variáveis do modal:
 isbnIndex = driver.find_element(By.ID, "isbnLivro")
+
 anoPublicacaoIndex = driver.find_element(By.ID, "anoLivro")
+
 tituloLivroIndex = driver.find_element(By.ID, "tituloLivro")
+
+EditoraLivroIndex = driver.find_element(By.ID, "editoraLivro")
+
 paginaLivroIndex = driver.find_element(By.ID, "paginasLivro")
+
 autorLivroIndex = driver.find_element(By.ID, "autorLivro")
+
 numeroExemplareIndex = driver.find_element(By.ID, "exemplaresLivro")
+
 sinopseLivroIndex = driver.find_element(By.ID, "sinopseLivro")
 
-
+#exemplo de teste de editor
 registroLivro = [
     { 
       "isbnIndex": "978-85-01-11553-9",
       "anoPublicacaoIndex": "01012005", 
       "tituloLivroIndex": "Socorro",
-      "editora": "Outra", 
-      "paginaLivroIndex": "300",
+      "paginaLivroIndex": "editora.oficial@gmail.com",
       "autorLivroIndex": "Estudante",
       "numeroExemplareIndex": "12",
       "sinopseLivroIndex": "Alunos desesperados e sofrendo pela vida acadêmica"
     }
 ]
 
-# adicioando valores aos inputs do modal seguindo o SEU padrão FOR
+# adicioando valores aos inputs do modal
 for livro in registroLivro:
 
     isbnIndex.send_keys(livro["isbnIndex"])
-    time.sleep(5)
+    time.sleep(2)
     
     anoPublicacaoIndex.send_keys(livro["anoPublicacaoIndex"])
-    time.sleep(5)
+    time.sleep(2)
     
     tituloLivroIndex.send_keys(livro["tituloLivroIndex"])
-    time.sleep(5)
-
-    select_editora = Select(driver.find_element(By.ID, "editoraLivro"))
-    try:
-        select_editora.select_by_visible_text(livro["editora"])
-    except:
-        select_editora.select_by_index(1)
+    time.sleep(2)
     
     paginaLivroIndex.send_keys(livro["paginaLivroIndex"])
     time.sleep(5)
+    
     autorLivroIndex.send_keys(livro["autorLivroIndex"])
     time.sleep(5)
+
     numeroExemplareIndex.send_keys(livro["numeroExemplareIndex"])
     time.sleep(5)
+    
     sinopseLivroIndex.send_keys(livro["sinopseLivroIndex"])
     time.sleep(5)
 
