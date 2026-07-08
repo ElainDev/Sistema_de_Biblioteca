@@ -35,7 +35,6 @@ function renderTabela(lista = editoras) {
         <td>${editora.id}</td>
         <td>${editora.cnpj}</td>
         <td>${editora.nome}</td>
-        <td>${editora.isbn}</td>
         <td>${editora.telefone}</td>
         <td>${editora.email}</td>
         <td>
@@ -67,7 +66,6 @@ form.addEventListener("submit", function (e) {
 
   let nome = document.getElementById("nomeEditora").value.trim();
   let cnpj = document.getElementById("CNPJEditora").value;
-  let isbn = document.getElementById("ISBNEditora").value;
   let telefone = document
     .getElementById("telefoneEditora")
     .value.replace(/\D/g, "");
@@ -121,7 +119,6 @@ function editarEditora(index) {
 
   document.getElementById("nomeEditora").value = editora.nome;
   document.getElementById("CNPJEditora").value = editora.cnpj;
-  document.getElementById("ISBNEditora").value = editora.isbn;
   document.getElementById("telefoneEditora").value = editora.telefone;
   document.getElementById("EmailEditora").value = editora.email;
 
@@ -152,8 +149,7 @@ campoBusca.addEventListener("input", function () {
   const filtradas = editoras.filter(
     (editora) =>
       editora.nome.toLowerCase().includes(texto) ||
-      editora.cnpj.toLowerCase().includes(texto) ||
-      editora.isbn.toLowerCase().includes(texto),
+      editora.cnpj.toLowerCase().includes(texto),
   );
 
   renderTabela(filtradas);
