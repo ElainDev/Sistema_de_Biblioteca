@@ -92,7 +92,6 @@ form.addEventListener("submit", function (e) {
         : gerarId(editoras),
     nome,
     cnpj,
-    isbn,
     telefone,
     email,
   };
